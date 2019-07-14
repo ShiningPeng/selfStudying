@@ -1,0 +1,6 @@
+文字编辑
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+
+文字不换行，超出则隐藏并打点
