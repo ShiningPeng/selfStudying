@@ -1,4 +1,0 @@
-vue¿ìËÙ´î½¨¿ò¼Ü
-vue init webpack name
-cd /name
-npm run dev
