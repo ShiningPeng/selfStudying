@@ -127,3 +127,5 @@ push	推送更新远程引用以及关联的对象
 查看当前git用户名和邮箱：git config user.name
 		            git config user.email
 配置提交远程仓库https方式：git remote add origin 远程仓库网址
+
+解决了一个困扰了我几天的git 提交问题，可能是我的不正确的git pull 操作，导致我的一些文件中都存在了.git文件，所以之后push操作时一直都无法正常推送，偶然这次提交的时候报了一个这样的错误warning: adding embedded git repository，以前好像没有出现，百度之后立马就找到了解决方案，只需要把本地这些文件的.git文件删除即可，之后就可以正常的add,commit,push了。
