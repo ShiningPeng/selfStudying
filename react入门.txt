@@ -45,3 +45,9 @@ import  {Table}  from './Table';
 2.一个组件有父子组件的话，绑定的事件在event对象的target.value获取到改变的值，自定义的属性可以在event.target.dataset.value里获取到。
 3.react强调不可变数据（函数式编程思想）  所以使用浅拷贝赋值，利用slice函数
 
+input标签设置ref属性
+<input ref={this.searchRef} />
+searchRef = React.createRef();
+value = this.searchRef.current.value;
+这里的value就是获取到的input框输入的内容
+
