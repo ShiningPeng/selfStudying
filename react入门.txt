@@ -51,3 +51,7 @@ searchRef = React.createRef();
 value = this.searchRef.current.value;
 这里的value就是获取到的input框输入的内容
 
+react项目的入口文件是/src/index.js
+ReactDom.render(<App />,document.getElementById('root'));
+
+

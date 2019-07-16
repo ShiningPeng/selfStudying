@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body onload="onLoadEvent()">
+  <button id="btn" onclick="changeColor()" onmouseout="showMessage()">这是一个按钮</button>
+  <div style="display: inline-block" class="con" onmouseover="showInfo()">这个一个盒子</div>
+  <input type="text" name="姓名" placeholder="请输入姓名" onchange="conChange()"   />
+  <textarea name="" id="" cols="30" rows="10" onselect="fontSelected()">我是菜鸟我是菜鸟我是菜鸟我是菜鸟我是菜鸟我是菜鸟</textarea>
+  <script>
+    // 在标签中绑定方法时需要加上()
+    function changeColor(){
+      var btn =  document.getElementById('btn');
+      btn.style.backgroundColor = "red";
+    }
+    function showInfo(){
+      confirm('鼠标移到了这个盒子上！');
+    }
+    function showMessage() {
+      alert('鼠标离开了button按钮');
+    }
+    // onfocus方法是获得焦点时触发
+    function getFocus() {
+      confirm('input输入框获得焦点');
+    }
+    // onblur方法是失去焦点时触发，与onfocus方法相对
+    function loseFocus(){
+      alert('input输入框失去焦点');
+    }
+    // 当文本框或者文本域中的文字被选中时触发onselect方法
+    function fontSelected(){
+      alert('文字被选中了');
+    }
+    // 改变文本框的内容来触发onchange事件,***文本框失去焦点之后才会触发**
+    function conChange() {
+      alert('文本框的内容改变了');
+    }
+    // onload事件会在页面加载完成后，立即发生,可以写在body上，也可以在js中写，window.onload(()=>{})
+    function onLoadEvent(){
+      alert('页面加载完成。');
+    }
+    // 当用户退出页面时（页面关闭、页面刷新等），触发onUnload事件
+    // function leaveOrRefresh(){
+    //   alert('离开了页面或者刷新了页面');
+    // }
+    window.onunload(()=>{
+      alert('离开了页面或者刷新了页面');
+    })
+  </script>
+</body>
+</html>
