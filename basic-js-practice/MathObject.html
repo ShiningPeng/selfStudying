@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Math对象</title>
+</head>
+
+<body>
+  <script>
+    //向下取整
+    document.write(Math.ceil(3.3) + '<br>');
+    document.write(Math.ceil(-0.1) + '<br>');
+    document.write(Math.ceil(-9.9) + '<br>');
+    document.write(Math.ceil(8.9) + '<br>');
+    //向下取整
+    document.write(Math.floor(3.3) + "<br>")
+    document.write(Math.floor(-0.1) + "<br>")
+    document.write(Math.floor(-9.9) + "<br>")
+    document.write(Math.floor(8.9) + '<br>')
+    //四舍五入
+    document.write(Math.round(1.6) + "<br>");
+    document.write(Math.round(2.5) + "<br>");
+    document.write(Math.round(0.49) + "<br>");
+    document.write(Math.round(-6.4) + "<br>");
+    document.write(Math.round(-6.6) + '<br>');
+    //随机产生一个不大于10的整数
+    document.write(Math.round((Math.random())*10) + '<br>');
+    //产生一个随机字母
+    //第一种方法
+    var arr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+    document.write(arr[parseInt(Math.random() * 52)]);
+    //第二种方法：ASCII码转字符
+    var randomLitter = String.fromCharCode(parseInt(Math.random() * 26 + 65));
+    console.log('randomLitter',randomLitter);
+  </script>
+</body>
+
+</html>

@@ -47,14 +47,15 @@
 // console.log('getTime',time.getTime());
 // console.log('getMilliseconds',time.getMilliseconds());
 
-var str = 'fsl dfj ljl ffsafa fa';
-console.log('str.length',str.length);
-console.log('str.toUpperCase()',str.toUpperCase());
-console.log('str.trim()',str.trim());
-console.log('str.split("")',str.split(''));
-console.log('str.indexOf("fa")',str.indexOf('fa'));
-console.log('str.charAt(str.length-1)',str.charAt(str.length-1));
-console.log('str.substr(5,7)',str.substr(5,7));
+// var str = 'fsl dfj ljl ffsafa fa';
+// console.log('str.length',str.length);
+// console.log('str.toUpperCase()',str.toUpperCase());
+// console.log('str.trim()',str.trim());
+// console.log('str.split("")',str.split(''));
+// console.log('str.indexOf("fa")',str.indexOf('fa'));
+// console.log('str.charAt(str.length-1)',str.charAt(str.length-1));
+// console.log('str.substr(5,7)',str.substr(5,7));
+
 
 
 
