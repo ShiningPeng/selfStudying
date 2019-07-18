@@ -116,6 +116,38 @@ valueOf() 返回Math对象的原始值
 13. unshift() 向数组的开头添加一个或更多元素，并返回新的长度
 14. valueOf() 返回数组对象的原始值
 
+##  window 对象方法
+alert() 显示带有一段消息和一个确认信息按钮的警告框
+prompt()  显示可提示用户输入的对话框
+confirm() 显示带有一段消息及确认按钮和取消按钮的对话框
+open()  打开一个新的浏览器窗口或查找一个已命名的窗口
+close() 关闭浏览器窗口
+print() 打印当前窗口的内容
+focus() 把键盘焦点给予一个窗口
+blur()  把键盘焦点从顶层窗口移开
+moveBy()  可相对窗口的当前坐标把它移动移动指定的像素
+moveTo()  把窗口的左上角移动到一个指定的坐标
+resizeBy()  按照指定的像素调整窗口的大小
+resizeTo()  把窗口的大小调整到指定的宽度和高度
+scrollBy()  按照指定的像素值来滚动内容
+scrollTo()  把内容滚动到指定的坐标
+setInterval() 每隔指定的时间执行代码,也就是说循环执行
+setTimeout()  在指定的延迟时间之后来执行代码，也就是说只执行一次
+clearInterval() 取消setInterval()的设置
+clearTimeout()  取消setTimeout()的设置
+
+##  History对象
+**history对象记录了用户曾经浏览过的页面(URL)，并可以实现浏览器前进与后退相似导航的功能。从窗口被打开的那一刻开始记录，每个浏览器窗口、每个标签页乃至每个框架，都有自己的history对象与特定的window对象关联**
+window.history.[属性|方法]  （window可以省略）
+history对象属性
+history.length  返回浏览器历史列表中URL的数量
+History对象方法
+back()  加载history列表中前一个URL
+forword() 加载history列表中的下一个URL
+go()  加载history列表中的某个具体的页面
+
+
+
 
 
 

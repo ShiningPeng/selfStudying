@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  点击下面的锚点链接，添加历史列表项:
+
+  <br />
+  <a href="#target1">第一个锚点</a>
+  <a name="target1"></a>
+  <br />
+  <a href="#target2">第二个锚点</a>
+  <a name="target2"></a>
+  <br /><br />
+  使用下面按钮，实现返回前一个页面:
+  <form>
+    <input type="button" value="返回前一个页面" onclick="GoBack();" />
+  </form>
+  可以注意网页的URL
+
+  <form>
+    <input type="button" value="点击我，打开新窗口" />
+    <input type="text" id="clock" size="50" />
+    <input type="text" id="clock1" size="50" />
+  </form>
+  <script>
+    //es6 的立即执行函数()(),第一个括号放方法的定义和函数体，页面加载会立即执行。
+    // (function welcome() {
+    //   alert("欢迎来到慕课网")
+    //   window.open('http://www.imooc.com', '_blank', 'width=600 height=400');
+    // })();
+    //setInterval()循环执行，setTimeout()只执行一次
+    var timer = setInterval(() => {
+      console.log('执行了setInterval函数');
+    }, 1000);
+    var timer1 = setTimeout(() => {
+      console.log('执行了setTimeout函数');
+    }, 3000);
+    setInterval(() => {
+      clearInterval(timer);
+    }, 5000)
+    // clearTimeout(timer1);
+
+    // var int = setInterval(clock, 2000)
+    // function clock() {
+    //   document.write('clock执行了' + '<br>');
+    // }
+    // setTimeout(() => {
+    //   clearInterval(int);
+    // }, 10000)
+
+
+    var attime;
+    function clock1() {
+      var time = new Date();
+      attime = time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds();
+      document.getElementById("clock1").value = attime;
+    }
+    setInterval(() => {
+      clock1();
+    }, 1000)
+
+
+    //history对象
+    //.length属性返回历史列表中URL的数量
+    var HL = history.length;
+    document.write(HL);
+    //加载历史列表前一个URL
+    // window.history.back();
+    // // 相当于
+    // window.history.go(-1);
+
+    function GoBack() {
+      window.history.back();
+    }
+  </script>
+</body>
+
+</html>
