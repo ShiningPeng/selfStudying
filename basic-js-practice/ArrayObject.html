@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script>
+    // var da1 = new Date();
+    // var weekday = da1.getDay();
+    // var weekd = da1.getUTCDate();
+    // console.log('weekday',weekday);
+    // console.log('da1.getHours',da1.getHours())
+    // console.log('da1.getUTCHours',da1.getUTCHours())
+    // console.log('da1.getMinutes',da1.getMinutes())
+    // console.log('da1.getUTCMinutes',da1.getUTCMinutes())
+    // var h1Node =  document.createElement('h1');
+    // document.getElementById('app').appendChild(h1Node);
+    // document.getElementsByTagName('h1').innerHtml(weekday);
+    // document.getElementById('app').appendChild((`<h1>${weekday}</h1>`)).innerHTML;
+
+    
+    // 连接myarr1和myarr2两个数组并输出
+    var myarr1 = new Array("010")
+    var myarr2 = new Array("-", "84697581");
+    document.write(myarr1.concat(myarr2) + "<br>");
+    var myarr3 = myarr1.concat(myarr2);
+    document.write(myarr3.join('-') + "<br>");
+    var arr1 = ["我", "爱", "你"];
+    document.write(arr1.reverse() + "<br>");
+    document.write(arr1.slice(1) + "<br>");
+    //排序sort()
+    function sortNum(a, b) {
+      return b - a;
+      //降序，如升序，把“b - a”该成“a - b”
+    }
+    var num = new Array("80", "16", "50", "6", "100", "1");
+    document.write(num + "<br>");
+    document.write(num.sort(sortNum) + "<br>");
+    //es6写法，箭头函数
+    document.write(num.sort((a, b) => {
+      return b - a;
+    }))
+  </script>
+</body>
+
+</html>
