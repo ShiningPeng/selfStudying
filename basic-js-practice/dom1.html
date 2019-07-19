@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DOM</title>
+</head>
+
+<body>
+  <p id="intro">我的课程</p>
+  <ul>
+    <li title="JS">JavaScript</li>
+    <li title="JQ">JQuery</li>
+    <li title="">HTML/CSS</li>
+    <li title="JAVA">JAVA</li>
+    <li title="">PHP</li>
+  </ul>
+  <h1>以下为li列表title的值,当title为空时，新设置值为"WEB前端技术":</h1>
+  <div>
+    javascript
+    <p>javascript</p>
+    <div>jQuery</div>
+    <h5>PHP</h5>
+  </div>
+  <div id="con">
+    <p>javascript</p>
+    <div>jQuery</div>
+    <h5>PHP</h5>
+  </div>
+  <script>
+    var Lists = document.getElementsByTagName("li");
+    for (var i = 0; i < Lists.length; i++) {
+      var text = Lists[i].title;
+      document.write(text + "<br>");
+      if (text == "") {
+        Lists[i].setAttribute('title', 'WEB前端技术');
+        document.write(Lists[i].getAttribute("title") + "<br>");
+      }
+    }
+
+    var list = document.getElementsByTagName('li');
+    for (let i = 0; i < list.length; i++) {
+      document.write('list[' + i + '].nodeName:' + list[i].nodeName + '<br>');
+      document.write('list[' + i + '].nodeType:' + list[i].nodeType + '<br>');
+      document.write('list[' + i + '].nodeValue:' + list[i].nodeValue + '<br>');
+    }
+
+    var node = document.getElementsByTagName('div')[0].childNodes;
+    for (let i = 0; i < node.length; i++) {
+      document.write(node[i] + ':');
+      document.write(node[i].nodeType + '<br>');
+    }
+
+    var x = document.getElementById("con");
+    document.write('x.firstChild-----:', x.firstChild + '<br>');
+    document.write('x.lastChild-----:', x.lastChild + '<br>');
+  </script>
+</body>
+
+</html>
