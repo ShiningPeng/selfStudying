@@ -146,6 +146,181 @@ back()  加载history列表中前一个URL
 forword() 加载history列表中的下一个URL
 go()  加载history列表中的某个具体的页面
 
+## Location对象
+location用于获取或设置窗体的URL，并且可以用于解析URL
+location.[属性|方法]
+location对象属性：
+  hash  设置或返回从井号开始的URL（锚）
+  host  设置或返回主机名和当前URL的端口号
+  hostname  设置或返回URL的主机名
+  href  设置或返回完整的URL
+  pathname  设置或返回当前URL的路径部分
+  port  设置或返回当前URL的端口号
+  protocol  设置或返回当前URL的协议
+  search  设置或返回从问号（？）开始的URL（查询部分）
+location对象方法：
+  assign()  加载新的文档
+  reload()  重新加载当前文档
+  replace() 用新的文档替换当前文档
+
+## Navigator对象
+对象属性：
+  appCodeName 浏览器代码名的字符串表示
+  appName     返回浏览器的名称
+  appVersion  返回浏览器的平台和版本信息
+  platform    返回运行浏览器的操作系统平台
+  userAgent   返回由客户机发送服务器的 user-agent 头部的值
+
+## screen 对象
+screen对象用于获取用户的屏幕信息
+window.screen.属性（window可省略）
+属性：
+  availHeight 返回访问者屏幕的高度，以像素计，减去界面特性，比如任务栏
+  availWidth  返回访问者屏幕的宽度，以像素计，减去界面特性，比如任务栏
+  (不同系统的任务栏默认高度不一样，及任务栏的位置可在屏幕上下左右任何位置，所以有可能可用宽度和高度不一样)
+  colorDepth  用户浏览器表示的颜色位数，通常为32位(每像素的位数)
+  pixelDepth  用户浏览器表示的颜色位数，通常为32位(每像素的位数)（IE不支持此属性）
+  height      屏幕分辨率的高度，单位像素
+  width       屏幕分辨率的宽度，单位像素
+
+## DOM文档对象模型
+在文档对象模型 (DOM) 中，每个节点都是一个对象
+dom-tree
+元素节点（即标签）
+文本节点（向用户展示的内容）:浏览器兼容问题，chrome、firefox等浏览器标签之间的空白也算是一个文本节点
+属性节点（元素的属性）
+
+DOM 节点有三个重要的节点属性 ：
+  nodeName  返回一个字符串，内容为给定节点的名字，是只读的：
+    1. 元素节点的 nodeName 与标签名相同
+    2. 属性节点的 nodeName 是属性的名称
+    3. 文本节点的 nodeName 永远是 #text
+    4. 文档节点的 nodeName 永远是 #document
+
+  nodeType  返回一个整数，这个数值代表给定节点的类型，是只读的：
+  元素类型    节点类型
+  元素          1
+  属性          2
+  文本          3
+  注释          8
+  文档          9
+
+  nodeValue 返回给定节点的当前值：
+    1. 元素节点的 nodeValue 是 undefined 或 null
+    2. 文本节点的 nodeValue 是文本自身
+    3. 属性节点的 nodeValue 是属性的值
+
+遍历节点树：
+  childNodes  返回一个数组，这个数组给定元素节点的子节点构成，
+  语法：elementNode.childNodes
+  如果选定的节点没有子节点，则该属性返回不包含节点的 NodeList
+
+  firstChild  属性返回‘childNodes’数组的第一个子节点。如果选定的节点没有子节点，则该属性返回 NULL
+
+  lastChild  属性返回‘childNodes’数组的最后一个子节点。如果选定的节点没有子节点，则该属性返回 NULL
+
+  parentNode  返回一个给定节点的父节点，父节点只能有一个
+  语法：elementNode.parentNode
+
+  nextSibling 返回给定节点的相邻的下一个兄弟节点，没有则返回null
+  previousSibling 返回给定节点的相邻的上一个兄弟节点，没有则返回null
+  两个属性获取的是节点。Internet Explorer 会忽略节点间生成的空白文本节点（例如，换行符号），而其它浏览器不会忽略。
+解决问题方法:
+判断节点nodeType是否为1, 如是为元素节点，跳过
+```js
+function get_nextSibling(n){
+      var x=n.nextSibling;
+        while (x && x.nodeType!=1){
+            x=x.nextSibling;
+        }
+        return x;
+    }
+```
+
+DOM操作
+  getElementsByTagName()  通过元素的标签名查询元素，返回带有指定标签名的节点对象的集合。返回元素的顺序是它们在文档中的顺序
+  getElementById() 通过元素的 id 属性查询元素
+  **getElementsByName()** 通过元素的 name 属性查询元素
+  document.createElement(element) 创建一个新的元素节点
+  创建元素节点。此方法可返回一个 Element 对象,语法：document.createElement(tagName)
+  要与appendChild() 或 insertBefore()方法联合使用，将元素显示在页面中
+
+  document.createTextNode() 创建一个包含着给定文本的新文本节点,就是嵌入在标签中的文本内容，语法： document.createTextNode(data)
+
+  appendChild()   指定节点的最后一个子节点列表之后添加一个新的子节点
+  语法：  appendChild(newnode)
+
+  insertBefore()  将一个给定节点插入到一个给定元素节点的给定子节点前面
+  语法:   insertBefore(newnode,node);
+
+  removeChild() 从一个给定元素中删除一个子节点
+
+
+  replaceChild()  把一个给定父元素里的一个子节点替换为另一个节点
+  实现子节点(对象)的替换。返回被替换对象的引用。 **当 oldnode 被替换时，所有与之相关的属性内容都将被移除。** newnode 必须先被建立,如果要给新节点添加内容可以通过创建文本节点createTextNode,然后appendChild到新节点上，之后再replaceChild
+  语法：  node.replaceChild (newnode,oldnode ) 
+参数：  newnode : 必需，用于替换 oldnode 的对象。 
+       oldnode : 必需，被 newnode 替换的对象
+
+  getAttribute()  通过元素节点的属性名称获取属性的值。{
+    语法：elementNode.getAttribute(name)
+    elementNode：使用getElementById()、getElementsByTagName()等方法，获取到的元素节点。name：要想查询的元素节点的属性名字
+  }
+
+  setAttribute()
+  增加一个指定名称和值的新属性，把指定的属性设置为指定的值。如果不存在具有指定名称的属性，该方法将创建一个新属性
+  语法：elementNode.setAttribute(name,value)
+  name: 要设置的属性名。value: 要设置的属性值
+
+## 浏览器窗口可视区域大小
+##clientWidth
+获得浏览器窗口的尺寸（浏览器的视口，不包括工具栏和滚动条）的方法:
+一、对于IE9+、Chrome、Firefox、Opera 以及 Safari：
+•  window.innerHeight - 浏览器窗口的内部高度
+•  window.innerWidth - 浏览器窗口的内部宽度
+二、对于 Internet Explorer 8、7、6、5：
+•  document.documentElement.clientHeight表示HTML文档所在窗口的当前高度。
+•  document.documentElement.clientWidth表示HTML文档所在窗口的当前宽度。
+或者Document对象的body属性对应HTML文档的<body>标签
+•  document.body.clientHeight
+•  document.body.clientWidth
+在不同浏览器都实用的 JavaScript 方案：
+var w= document.documentElement.clientWidth || document.body.clientWidth;
+var h= document.documentElement.clientHeight || document.body.clientHeight;
+
+## 网页尺寸scrollHeight
+scrollHeight和scrollWidth，获取网页内容高度和宽度。
+一、针对IE、Opera:
+scrollHeight 是网页内容实际高度，可以小于 clientHeight。
+二、针对NS、FF:
+scrollHeight 是网页内容高度，**不过最小值是 clientHeight。也就是说网页内容实际高度小于 clientHeight 时，scrollHeight 返回 clientHeight 。**
+三、浏览器兼容性
+var w=document.documentElement.scrollWidth
+   || document.body.scrollWidth;
+var h=document.documentElement.scrollHeight
+   || document.body.scrollHeight;
+注意:区分大小写
+scrollHeight和scrollWidth还可获取Dom元素中**内容实际占用**的高度和宽度。
+
+##网页尺寸offsetHeight
+offsetHeight和offsetWidth，获取网页内容高度和宽度(包括滚动条等边线，会随窗口的显示大小改变)。
+一、值
+**offsetHeight = clientHeight + 滚动条 + 边框。**
+二、浏览器兼容性
+var w= document.documentElement.offsetWidth
+    || document.body.offsetWidth;
+var h= document.documentElement.offsetHeight
+    || document.body.offsetHeight;
+
+    
+    
+不记得这些具体长啥样可参考：
+https://blog.csdn.net/qq_42089654/article/details/80515916
+
+
+  
+
+
 
 
 
