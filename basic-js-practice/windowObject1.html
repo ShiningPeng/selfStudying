@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #container {
+      background: #fff;
+      width: 60%;
+      margin: 0 auto;
+      height: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <!--先编写好网页布局-->
+  <div id="container">
+    <h1>操作成功</h1>
+    <h2 id="timeset"></h2>
+    <a onclick="back()">返回</a>
+  </div>
+
+  <form>
+    <input type="button" value="查看浏览器" onclick="validB()">
+  </form>
+  <script>
+    //返回当前网页的完整URL
+    var url = window.location.href;
+    document.write(url + '<br>');
+    //navigator对象返回浏览器的信息
+    document.write('navigator.appCodeName:', navigator.appCodeName + '<br>');
+    document.write('navigator.appName:', navigator.appName + '<br>');
+    document.write('navigator.appVersion:', navigator.appVersion + '<br>');
+    document.write('navigator.platform:', navigator.platform + '<br>');
+    document.write('navigator.userAgent:', navigator.userAgent + '<br>');
+
+
+    //获取浏览器信息
+    function validB() {
+      var u_agent = navigator.userAgent;
+      var B_name = "不是想用的主流浏览器!";
+      if (u_agent.indexOf("Firefox") > -1) {
+        B_name = "Firefox";
+      } else if (u_agent.indexOf("Chrome") > -1) {
+        B_name = "Chrome";
+      } else if (u_agent.indexOf("MSIE") > -1 && u_agent.indexOf("Trident") > -1) {
+        B_name = "IE(8-10)";
+      }
+      document.write("浏览器:" + B_name + "<br>");
+      document.write("u_agent:" + u_agent + "<br>");
+    }
+
+    document.write("屏幕宽度：" + screen.width + "px<br />");
+    document.write("屏幕高度：" + screen.height + "px<br />");
+    document.write("可用宽度：" + screen.availWidth + 'px<br/>');
+    document.write("可用高度：" + screen.availHeight + 'px<br/>'); 
+
+
+    //获取显示秒数的元素，通过定时器来更改秒数。
+    var time = 6;
+    var timer = setInterval(() => {
+      time--;
+      if (time === 0) {
+        window.open('https://www.imooc.com');
+        clearInterval(timer);
+      }
+      document.getElementById('timeset').innerHTML = `${time}秒后回到主页`
+
+    }, 1000)
+    function back(){
+      window.history.back();
+  }
+
+  </script>
+</body>
+
+</html>
