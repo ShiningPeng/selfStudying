@@ -1,43 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>dom</title>
 </head>
 
-  <body>
-    <table border="1" width="50%" id="table">
-      <tr>
-        <th>学号</th>
-        <th>姓名</th>
-        <th>操作</th>
-      </tr>
-      <tr>
-        <td>xh001</td>
-        <td>王小明</td>
-        <td><a href="javascript:;">删除</a></td>
-        <!--在删除按钮上添加点击事件  -->
-      </tr>
-      <tr>
-        <td>xh002</td>
-        <td>刘小芳</td>
-        <td><a href="javascript:;">删除</a></td>
-        <!--在删除按钮上添加点击事件  -->
-      </tr>
-    </table>
-    <input type="button" value="添加一行" />
-    <!--在添加按钮上添加点击事件  -->
+<body>
+  <table border="1" width="50%" id="table">
+    <tr>
+      <th>学号</th>
+      <th>姓名</th>
+      <th>操作</th>
+    </tr>
+    <tr>
+      <td>xh001</td>
+      <td>王小明</td>
+      <td><a href="javascript:deleteTr(0);">删除</a></td>
+      <!--在删除按钮上添加点击事件  -->
+    </tr>
+    <tr>
+      <td>xh002</td>
+      <td>刘小芳</td>
+      <td><a href="javascript:deleteTr(1);">删除</a></td>
+      <!--在删除按钮上添加点击事件  -->
+    </tr>
+  </table>
+  <input type="button" value="添加一行" onclick="addTr()" />
+  <!--在添加按钮上添加点击事件  -->
 
-    <script type="text/javascript">
-      window.onload = function () {
-        // 鼠标移动改变背景,可以通过给每行绑定鼠标移上事件和鼠标移除事件来改变所在行背景色。
+  <script>
+    window.onload = function () {
+      // 鼠标移动改变背景,可以通过给每行绑定鼠标移上事件和鼠标移除事件来改变所在行背景色。
+      // document.getElementsByTagName('table')[0].style.backgroundColor = '#fff';
+      var tableNode = document.getElementById('table');
+      for (let i = 0; i < tableNode.childNodes.length; i++) {
+        tableNode.childNodes[i].addEventListener('mouseover', () => {
+          tableNode.childNodes[i].style.backgroundColor = '#f2f2f2';
+        })
+        tableNode.childNodes[i].addEventListener('mouseout', () => {
+          tableNode.childNodes[i].style.backgroundColor = '#fff';
+        })
       }
-        // 编写一个函数，供添加按钮调用，动态在表格的最后一行添加子节点；
-       // 创建删除函数
-    </script>
-  </body>
+    }
+    // 编写一个函数，供添加按钮调用，动态在表格的最后一行添加子节点；
+    function addTr() {
+      var trNode = document.createElement('tr');
+      var tdNode1 = document.createElement('td');
+      var tdNode2 = document.createElement('td');
+      var tdNode3 = document.createElement('td');
+      var aNode = document.createElement('a');
+      var tableNode = document.getElementById('table');
+      var num = tableNode.childNodes.length + 2;
+      console.log('tableNode.childNodes.length---', tableNode.childNodes.length);
+      tdNode1.innerHTML = 'xh003';
+      tdNode2.innerHTML = '张三';
+      // tdNode3.innerHTML = '删除';
+      tdNode3.appendChild(aNode);
+      aNode.innerHTML = '删除';
+      aNode.setAttribute('href', `javascript:deleteTr(${num - 1});`);
+      trNode.appendChild(tdNode1);
+      trNode.appendChild(tdNode2);
+      trNode.appendChild(tdNode3);
+      tableNode.appendChild(trNode);
+    }
+    var aNode = document.getElementsByTagName('a');
+    var tableNode = document.getElementById('table');
+    console.log('tableNode.childNodes.length', tableNode.childNodes.length);
+    console.log('aNode[0].parentNode', aNode[0].parentNode);
+    // setInterval(() => {
+    //   console.log('tableNode.childNodes.length', tableNode.childNodes.length);
+    //   console.log('aNode.parentNode', aNode.parentNode);
+    // }, 1000);
 
+    // 创建删除函数
+    function deleteTr(i) {
+      var aNode = document.getElementsByTagName('a');
+      var tableNode = document.getElementById('table');
+      tableNode.removeChild(aNode[i].parentNode.parentNode);
+    }
+  </script>
+</body>
 </html>
