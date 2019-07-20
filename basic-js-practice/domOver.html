@@ -64,12 +64,17 @@
       trNode.appendChild(tdNode1);
       trNode.appendChild(tdNode2);
       trNode.appendChild(tdNode3);
-      tableNode.appendChild(trNode);
+      tableNode.childNodes[1].appendChild(trNode);
+      console.log('firstchild',tableNode.firstChild);
     }
     var aNode = document.getElementsByTagName('a');
     var tableNode = document.getElementById('table');
     console.log('tableNode.childNodes.length', tableNode.childNodes.length);
     console.log('aNode[0].parentNode', aNode[0].parentNode);
+    console.log('aNode[1].parentNode', aNode[1].parentNode);
+    console.log('aNode[2].parentNode', aNode[2].parentNode);
+    console.log('aNode[3].parentNode', aNode[3].parentNode);
+
     // setInterval(() => {
     //   console.log('tableNode.childNodes.length', tableNode.childNodes.length);
     //   console.log('aNode.parentNode', aNode.parentNode);
@@ -79,7 +84,7 @@
     function deleteTr(i) {
       var aNode = document.getElementsByTagName('a');
       var tableNode = document.getElementById('table');
-      tableNode.removeChild(aNode[i].parentNode.parentNode);
+      tableNode.childNodes[1].removeChild(aNode[i].parentNode.parentNode);
     }
   </script>
 </body>
