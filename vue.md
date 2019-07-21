@@ -87,6 +87,46 @@ v-bind 绑定的 class 与本身的class不冲突,绑定class的时候可以用�
 v-if 元素会从文档流里被删除
 v-show 还会存在dom结构，只是通过display:none 来控制不显示
 
+#v-on修改器
+参数keydown和修改器.enter配合使用
+@keydown.enter="onKeydown"
+
+#绑定自定义事件
+子组件绑定方法后，在该方法中this.$emit('abc','可以传的参数')   //abc为事件名
+父组件通过@abc="方法名"  来监听，子组件触发的时候，父组件绑定的方法也会执行
+
+#input
+input输入时通过v-model进行绑定input框输入的值，双向数据绑定
+
+```html
+<select v-model="selection">
+  <option>1</option>
+  <option>2</option>
+</select>
+{{selection}}
+<input v-model="myBox" type="radio" value="apple">
+<input v-model="myBox" type="radio" value="banana"> 
+<input v-model="myBox" type="radio" value="pinapple">
+```
+```js
+data(){
+  return {
+    model:[],
+    selection:null
+  }
+} 
+```
+
+在标签中的属性需要绑定的时候必须要加上v-bind:或者:   ,否则该属性只是一个字符串而不是变量名
+
+#v-model的三种修改器
+<input v-model="myvalue">{{myvalue}}
+v-model.lazy 延迟加载 就是等输入完了之后才去修改v-model所绑定的值
+而没有.lazy修改器的时候，输入什么就会显示什么，实时的进行更改
+.numbere 强制输入的值的类型为number 没有这个修改器的时候输入的都是string
+.trim  清除输入的内容两端的空格
+
+
 
 
 
