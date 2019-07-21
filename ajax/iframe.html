@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>iframe</title>
+</head>
+<body>
+  <h1>通过iframe实现页面的局部更新，达到异步请求的效果</h1>
+  <form action="./iframe.js" method="POST" target="myiframe">
+    用户名：<input type="text" name="userName">
+    密码：<input type="text" name="password">
+    <input type="submit" value="登录"> 
+  </form>
+  <iframe name="myiframe"></iframe>
+</body>
+</html>
