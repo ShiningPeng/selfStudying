@@ -59,4 +59,34 @@ right 0
 2.使用vuex仓库
 数据存在本地存储时刷新页面数据还在，而vuex存储的数据在页面刷新之后就不在了
 
+**内部指令**
+#v-html和v-text的区别：
+当给他们赋值的字符串中含有标签名时，v-html会进行编译，而v-text还是把它当场字符串展示在页面上如
+<p v-html='<span>hello world!</span>'></p>      //hello world!
+<p v-text='<span>hello world!</span>'></p>      //<span>hello world!</span>
+当字符串中不含有标签时两者效果是一样的
+
+#{{}}
+在这其中可以进行js运算
+
+#绑定变量和方法
+#v-bind
+v-bind可缩写为':',用来绑定标签的属性<a v-bind:href="link"></a>,link是data中的一个变量,不使用v-bind时<a href="link"></a> link只是一个字符串"link"而不是data中的一个变量,
+v-bind 绑定的 class 与本身的class不冲突,绑定class的时候可以用变量名，数组，对象
+:class="active"   :class="[classA,classB]"  :class="{'red-font':true}"   
+绑定方法和变量时只需写变量名或方法名  v-html="message",不需要使用{}
+
+#v-for
+渲染数组 v-for="(item, index) in items"
+渲染对象v-for="(value, key) in object"
+
+数组的filter、concat、slice方法不会触发双向绑定数据的更新
+更改数组的某一项是也不会触发数据的更新，重新渲染，可以通过Vue的全局方法，Vue.set(数组名,索引,值)方法能够达到重新渲染的效果
+
+#v-if和v-show
+v-if 元素会从文档流里被删除
+v-show 还会存在dom结构，只是通过display:none 来控制不显示
+
+
+
 
