@@ -157,5 +157,79 @@ CSS实现过渡：vue在过渡的不同阶段会给不同的类名来控制样�
 v-if，v-show，动态组件绑定:is,transition中的mode属性可以控制组件进出效果的先后顺序in-out,out-in。
 在相同标签名时，vue中的transition不会进行，需要用key将相同标签区分开时，才会执行过渡
 
+#es6中对一个变量的导出需要用{}包起来，引用时也要用{}引入进来
+
+##vue-router
+router-view、router-link
+要使用vue-router的步骤：
+先安装 npm install vue-router --save-dev
+在main.js中全局使用
+import VRouter from 'vue-router';
+Vue.use(VRouter);
+在本地实例化一个router来配置路由，也就是做一个映射表，什么地址使用什么组件
+let router = new VRouter({
+  mode:'history' //可以将浏览器设置为history模式
+  routes:[{
+    path:'/hello',
+    component:Hello,
+    name:'Hello'
+  },
+  {},{}
+  ]
+})
+
+之后将router在vue实例中声明
+new Vue({
+  el:'#app',
+  router,
+  template:'<App>',
+  components:{
+    App
+  }
+})
+<router-link :to="{path:'apple'}"></router-link>
+通过to来设置跳转路由，相当于h5的a标签中的href属性，
+也可以通过具名的路由进行跳转，也就是设置了name属性的路由，可以通过name来访问路由
+:to="{name:'Apple'}"
+router-link里还可以指定跳转之后渲染的标签，通过tag属性，<router-link :to="{name:'Apple'}" tag="li"></router-link>
+
+#路由的参数
+传参方式
+1. 可以在配置映射时在routes的path中添加参数
+path:'/apple/:color'
+**在页面中可以通过this.$route.params获取到传递的参数**
+2. 在绑定的router-link的to属性中传入的对象可以带参数
+<router-link :to="{name:'/hello', params:{id:123}}">
+3. 通过绑定点击事件，在点击事件中设置路由
+<div @click="go"></div>
+go(){
+  this.$router.push('/look/look-two')
+  //this.$router.push({ path: '/look/look-two'})
+  //this.$router.push({name:'LookTwo',param:{ id: 12345}})
+}
+可以通过这样传参也可以这样来实现页面之间的跳转，就相当于router-link的功能
+
+
+##钩子函数
+beforeRouteEnter(),beforeRouteLeave() 类似于生命周期函数，
+beforeRouteEnter()在路由跳转的时候产生
+就拿跳远来比喻，beforeRouteEnter是你将要起跳的时候，脚还没有离开地面，
+beforeRouteLeave是你将要落地的时候，脚还没有到达地面
+都接收三个参数(to, from, next)
+
+##子路由
+在一级路由下的二级路由，二级路由渲染到一级路由页面上，不会到根组件
+写法:
+routes:[{
+    path:'/hello',
+    component:Hello,
+    name:'Hello',
+    children:[{
+        path:'/apple',
+        component:Apple,
+        name:'Apple'
+      }]
+    },{},{}]
+
 
 
