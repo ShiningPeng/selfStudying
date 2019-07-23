@@ -16,8 +16,6 @@ git branch -v    //查看每一个分支的最后一次提交
 git branch --merged     //查看哪些分支已经合并到当前分支
 
 
-
-
 ##删除github仓库上的文件步骤：
 可以在需要删除文件的本地的目录打开git命令行
 git pull origin master  将远程项目拉下来
@@ -65,7 +63,8 @@ push	推送更新远程引用以及关联的对象
 #解决了一个困扰
 解决了一个困扰了我几天的git 提交问题，可能是我的不正确的git pull 操作，导致我的一些文件中都存在了.git文件，所以之后push操作时一直都无法正常推送，偶然这次提交的时候报了一个这样的错误warning: adding embedded git repository，以前好像没有出现，百度之后立马就找到了解决方案，只需要把本地这些文件的.git文件删除即可，之后就可以正常的add,commit,push了。
 
-#！！！绝对不能不在根目录下运行git pull origin master
+#！！！git pull origin master
+在使用这个命令的时候一定要看清楚目录是在哪
 
 #报错：fatal:'origin' does not appear to be a git repository
 fatal:Could not read from remote repository
