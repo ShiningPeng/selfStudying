@@ -84,8 +84,8 @@ v-bind 绑定的 class 与本身的class不冲突,绑定class的时候可以用�
 更改数组的某一项是也不会触发数据的更新，重新渲染，可以通过Vue的全局方法，Vue.set(数组名,索引,值)方法能够达到重新渲染的效果
 
 #v-if和v-show
-v-if 元素会从文档流里被删除
-v-show 还会存在dom结构，只是通过display:none 来控制不显示
+v-if 当条件为假时元素会从文档流里被删除
+v-show 当条件为假时还会存在dom结构，只是通过display:none 来控制不显示
 
 #v-on修改器
 参数keydown和修改器.enter配合使用
@@ -230,6 +230,3 @@ routes:[{
         name:'Apple'
       }]
     },{},{}]
-
-
-
