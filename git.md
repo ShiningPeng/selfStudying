@@ -1,7 +1,9 @@
+##git提交步骤
 git init 初始化
-git add 文件名
+git add 文件名/文件夹名
 git commit -m '所提交文件的备注信息'
-git push origin master    //提交到master上
+git pull	将远程仓库拉倒本地
+git push  //提交到远程仓库上
 
 git branch     //查看所有分支
 git branch 分支名    //创建分支
@@ -70,3 +72,5 @@ fatal:Could not read from remote repository
 原因：本地分支和远程分支断开连接
 解决：git remote add origin 仓库网址
 git remote -v查看是否连接上了
+
+
