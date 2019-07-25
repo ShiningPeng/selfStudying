@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div>
+    <div class="head-con">
       <span class="day">{{day}}</span>
       <span class="year-month">{{yearAndMonth}}</span>
       <span><i class="iconfont">&#xe603;</i></span>
@@ -24,17 +24,22 @@ export default {
 @import '../assets/css/function';
 
 .header 
-  height px2rem(88px)
-  line-height px2rem(88px)
+  width 95%
+  height 60px
+  line-height 60px
   text-align left
-  display flex
-  align-items center
-  justify-content space-between
-  padding px2rem(40px)
+  // margin-left 5%
+  padding-left 5%
   z-index 1
-  .day
-    display inline-block
-    font-size 35px
-    font-weight 700
-    
+  background-color #fff
+  .head-con
+    width 100%
+    height 100%
+    .day
+      // display inline-block
+      font-size 40px
+      font-weight 700
+    .year-month
+      font-size 14px
+      font-weight bold
 </style>
