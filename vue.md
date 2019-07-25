@@ -36,7 +36,7 @@ router-link的to属性，属性中放配置的url
 
 ##<keep-alive></keep-alive>
 用法: <keep-alive><router-view></router-view></keep-alive>
-vue中保存上一个路由组件的状态的一个方法，如，在一个tab页下滑动到一半，然后切换到别的tab页，后面我又切回原来的tab页，如果没有这个标签的话就会回到最上面需要重新往下滑，有的话会保存之前的状态，直接回到离开时的位置
+vue中保存上一个路由组件的状态的一个方法，如，在一个tab页下滑动到一半，然后切换到别的tab页，后面我又切回原来的tab页，如果没有这个标签的话就会回到最上面需要重新往下滑，有的话会保存之前的状态，直接回到离开时的位置，缓存之前的状态，不需要重新渲染，节省资源。
 
 #页面中不会受路由影响的东西放到APP.vue中写
 
@@ -151,7 +151,7 @@ props接收两种类型，一种是数组，一种是对象，可以规定传值
 is绑定组件 :is="组件标签名"，类似路由，动态组件也支持<keep-alive>的内置标签
 
 ##过渡效果
-<transition></transition>标签包裹需要使用过渡效果的标签，能够使动作变得更加柔和，不会那么生硬，transition 需要进行命名name，另外还要结合一些属性才能起效果
+<transition></transition>标签包裹需要使用过渡效果的标签,还可以用在组件上，将router-view包裹，组件也有切换效果，能够使动作变得更加柔和，不会那么生硬，transition 需要进行命名name，另外还要结合一些属性才能起效果
 CSS实现过渡：vue在过渡的不同阶段会给不同的类名来控制样式：完全不显示的时候类名为v-enter
 ,进入显示过程中得到v-enter-active,完全存在的时候离开会有一个类名v-leave,开始不展现的时候，也就是在不显示的过程中会赋予v-leave-active类名
 v-if，v-show，动态组件绑定:is,transition中的mode属性可以控制组件进出效果的先后顺序in-out,out-in。
@@ -161,6 +161,9 @@ v-if，v-show，动态组件绑定:is,transition中的mode属性可以控制组�
 
 ##vue-router
 router-view、router-link
+命名视图：
+<router-view name="header"></router-view>可以在这里给标签添加name属性，来添加对应的组件
+命名路由就是某个路由设置了name属性，
 要使用vue-router的步骤：
 先安装 npm install vue-router --save-dev
 在main.js中全局使用
@@ -230,3 +233,10 @@ routes:[{
         name:'Apple'
       }]
     },{},{}]
+
+#重定向
+routes的path为根目录'/',还有一个redirect属性为'重定向的地址'
+
+
+
+
