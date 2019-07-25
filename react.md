@@ -53,4 +53,20 @@ value = this.searchRef.current.value;
 ##react项目的入口文件是/src/index.js
 ReactDom.render(<App />,document.getElementById('root'));
 
+##react生命周期函数
+主要要记的
+1. 挂载的时候
+componentWillMount、componentDidMount、render
+在componentDidMount之后才能获取到真实的dom结构，在componentWillMount的时候产生的是虚拟的dom结构
+2. 更新的时候
+  (1)state改变导致的更新
+      shouldComponentUpdate(默认值为true) -> componentWillUpdate -> render -> componentDidUpdate 
+  (2)props改变导致的更新
+  componentWillReceiveProps -> shouldComponentUpdate(默认值为true) -> componentWillUpdate -> render -> componentDidUpdate
+
+##useState  API
+  const [ parentCount, setParentCount] = useState(0);
+  结构出来的第一个参数是默认值，第二个是改变值的方法
+  <button onClick={() => setParentCount(parentCount + 1)}>setParentCount</button>
+
 
