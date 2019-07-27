@@ -69,4 +69,8 @@ componentWillMount、componentDidMount、render
   结构出来的第一个参数是默认值，第二个是改变值的方法
   <button onClick={() => setParentCount(parentCount + 1)}>setParentCount</button>
 
+##redux和react-redux
+redux     单向数据流的思想，action,reducer,state都是属于redux的，是一个js库，原生js
+react-redux 把redux的很多东西封装成了组件
+
 
