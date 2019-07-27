@@ -125,3 +125,9 @@ for (let index of myArray) {
 console.log(a.__proto__ === b)//true
 console.log(Object.getPrototypeOf(a) === b)//true
 // 浏览器的__proto__属性就相当于getPrototypeOf这个正式的api,两次的操作时一样的
+
+##async
+async 函数就是 Generator 函数的语法糖,
+如class 是 function.prototype的语法糖
+
+generator函数是一次只执行到一个yield之后，通过next一步一步执行
