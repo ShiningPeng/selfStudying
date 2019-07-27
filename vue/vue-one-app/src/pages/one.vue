@@ -3,8 +3,8 @@
     <!-- header -->
     <v-header></v-header>
     <!-- 摄影 -->
-    <div >
-    <v-common  :items="items" ></v-common>
+    <div class="item-top">
+      <v-common  :items="items" ></v-common>
     </div>
     <!-- smallNavigator -->
     <!-- one-story -->
@@ -14,20 +14,26 @@
     <!-- 深夜电台 -->
     <!-- 上一个 -->
     <!-- tabbar -->
+    <!-- <v-tabbar></v-tabbar> -->
+    
   </div>
 </template>
 
 <script>
 import header from '@/components/header';
 import commont from '@/components/common';
+import tabbar from '@/components/tabbar';
+// import { Tabbar, TabbarItem } from 'vant';
+
 export default {
-  name: "Main",
+  name: "One",
   components: {
     "v-header": header,
-    'v-common':commont
+    'v-common':commont,
+    // 'v-tabbar':tabbar
   },
   data() {
-    return {
+    return {   
       items:[
         {
           type: 'ONE-STORY',
@@ -57,13 +63,18 @@ export default {
           type: '影视',
           title: '是爱啊，我们都需要',
           author: '文/不辣',
-          desc:'djdjakf;kdfa;k',
-          date: '7月24日',
-          aixinCount: 1520
+          desc:'只要还抱着希望，还保有热情与信心，两个人可以一起创造很多东西',
+          date: '今天',
+          aixinCount: 1349
         }
       ]
     };
-  }
+  },
+  methods: {
+    onChange(event) {
+      console.log(event.detail);
+    }
+  },
 };
 </script>
 
@@ -71,4 +82,7 @@ export default {
 html,body
   width 100%
   height 100%
+  .container
+    .item-top
+      margin-top 50px
 </style>

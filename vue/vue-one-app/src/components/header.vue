@@ -24,14 +24,16 @@ export default {
 @import '../assets/css/function';
 
 .header 
-  width 95%
+  position fixed
+  width 90%
   height 60px
   line-height 60px
   text-align left
   // margin-left 5%
-  padding-left 5%
+  padding 0 5%
   z-index 1
   background-color #fff
+  top 0
   .head-con
     width 100%
     height 100%
