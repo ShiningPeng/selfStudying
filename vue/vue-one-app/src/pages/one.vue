@@ -14,7 +14,7 @@
     <!-- 深夜电台 -->
     <!-- 上一个 -->
     <!-- tabbar -->
-    <!-- <v-tabbar></v-tabbar> -->
+    <!-- <v-tabbar></v-tabbar>  -->
     
   </div>
 </template>
@@ -30,7 +30,7 @@ export default {
   components: {
     "v-header": header,
     'v-common':commont,
-    // 'v-tabbar':tabbar
+    'v-tabbar':tabbar
   },
   data() {
     return {   
