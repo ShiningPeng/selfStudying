@@ -53,17 +53,6 @@ const getOneData = function () {
               .replace(/\s/g, '')
           })
         })
-        // for(let i = 0; i < selectItem.length;i++){
-        //   allData.push({type: $(selectItem[i])
-        //     .find(".fp-one-imagen-footer")
-        //     .text()
-        //     .replace(/\s/g, ''),
-        //   text: $(selectItem[i])
-        //     .find(".fp-one-cita")
-        //     .text()
-        //     .replace(/\s/g, '')
-        // })
-        // }
         let todayOne = selectItem[0];
         let todayOneData = {
           type: $(todayOne)
