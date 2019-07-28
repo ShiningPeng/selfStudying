@@ -1,18 +1,22 @@
 <template>
   <div>
-    <van-tabbar :active="active" @change="onChange">
-      <van-tabbar-item info="3">
-        <image slot="icon" :src="icon.normal" mode="aspectFit" />
-        <image slot="icon-active" :src="icon.active" mode="aspectFit" />自定义
-      </van-tabbar-item>
-      <van-tabbar-item icon="search">标签</van-tabbar-item>
-      <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
-    </van-tabbar>
+    <van-tabbar v-model="active">
+  <van-tabbar-item info="3">
+    <span>自定义</span>
+    <img
+      slot="icon"
+      slot-scope="props"
+      :src="props.active ? icon.active : icon.normal"
+    >
+  </van-tabbar-item>
+  <van-tabbar-item icon="search">标签</van-tabbar-item>
+  <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+</van-tabbar>
   </div>
 </template>
 
 <script>
-// import { Tabbar, TabbarItem } from 'vant';
+import { Tabbar, TabbarItem,Icon } from 'vant';
 export default {
   name: "tabbar",
   data() {
@@ -21,6 +25,7 @@ export default {
       icon: {
         normal: "//img.yzcdn.cn/icon-normal.png",
         active: "//img.yzcdn.cn/icon-active.png"
+        
       }
     };
   },

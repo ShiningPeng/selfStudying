@@ -13,8 +13,11 @@
     <!-- 影视 -->
     <!-- 深夜电台 -->
     <!-- 上一个 -->
+    <v-test></v-test>
     <!-- tabbar -->
+    <!-- <div> -->
     <!-- <v-tabbar></v-tabbar>  -->
+    <!-- </div> -->
     
   </div>
 </template>
@@ -23,14 +26,15 @@
 import header from '@/components/header';
 import commont from '@/components/common';
 import tabbar from '@/components/tabbar';
-// import { Tabbar, TabbarItem } from 'vant';
+import test from '@/components/test-vant';
 
 export default {
   name: "One",
   components: {
     "v-header": header,
     'v-common':commont,
-    'v-tabbar':tabbar
+    'v-tabbar':tabbar,
+    'v-test':test
   },
   data() {
     return {   
@@ -71,9 +75,7 @@ export default {
     };
   },
   methods: {
-    onChange(event) {
-      console.log(event.detail);
-    }
+   
   },
 };
 </script>
