@@ -131,3 +131,17 @@ async 函数就是 Generator 函数的语法糖,
 如class 是 function.prototype的语法糖
 
 generator函数是一次只执行到一个yield之后，通过next一步一步执行
+
+##this的指向
+	1.当函数作为对象的方法被调用时，this就会指向该对象。
+	2.作为普通函数，this指向window。
+	3.构造器调用，this指向返回的这个对象。
+	4.箭头函数  箭头函数的this绑定看的是this所在函数定义在哪个对象下，就绑定哪个对象
+      		    如果有嵌套的情况，则this绑定到最近的一层对象上
+
+		this指向的固定化，并不是因为箭头函数内部有绑定this的
+		机制，实际原因是箭头函数根本没有自己的this，导致内部的this就是外
+		层代码块的this。正是因为它没有this，所以也就不能用作构造函数。
+
+**怎么改变this的指向呢**
+   1.使用es6的箭头函数；2.在函数内部使用that = this；3.使用apply，call，bind； 4.new实例化一个对象
