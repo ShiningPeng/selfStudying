@@ -24,8 +24,16 @@ const getWeatherTpis = function () {
           day, weatherText, temperature
         })
       })
-      resolve({ weatherTip, threeDaysData });
+      let todayWeather = [];
+      todayWeather.push({
+        day:$('.forecast .days')[0].find('li').eq(0).text().trim(),
+        weather:$('.forecast .days')[0].find('li').eq(1).text().trim(),
+        temperature:$('.forecast .days')[0].find('li').eq(2).text().trim()
+      })
+      
+      resolve({ weatherTip, threeDaysData, todayWeather });
       // console.log(weatherTip, threeDaysData);
+      console.log(todayWeather);
     })
   })
 };
@@ -70,5 +78,34 @@ const getOneData = function () {
       })
   })
 }
+const getTodayArticleTitle = function () {
+  return new Promise((resolve, reject) => {
+    superagent.get('http://wufazhuce.com/')
+      .end((err, res) => {
+        if (err) {
+          reject(err);
+        }
+        let $ = cheerio.load(res.text);
+        //res.text是整个网页的html结构
+        console.log('res.text:', res.text);
+
+        // let $ = cheerio.html(res);
+        // console.log('cheerio.html:',$);
+        // cheerio.load
+        //获取文章标题
+        let todayArticleTitle = $("#main-container .fp-one-atriculo .corriente");
+        // console.log(todayArticleTitle);
+        let articleTitle = {
+          xuhao:$(todayArticleTitle[0])
+          .find(".one-titulo"),
+          // .text().replace(/\s/g, ''),
+          articleName:$(todayArticleTitle[0]).find(".one-articulo-titulo")
+        };
+        resolve(articleTitle);
+        // console.log('articleTitle:',articleTitle);
+      })
+  })
+};
+// getTodayArticleTitle();
 getWeatherTpis();
-getOneData();
+// getOneData();
