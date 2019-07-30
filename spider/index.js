@@ -138,6 +138,17 @@ const getArticle = function () {
     })
   })
 }
+let getOneQuestion = function(){
+  return new Promise((resolve, reject) => {
+    superagent.get('http://wafazhuce.com').end((err, res) => {
+      if(err){
+        reject(err);
+      }
+      let $ = cheerio.load(res.text);
+    })
+  })
+}
+
 // getTodayArticleTitle();
 // getWeatherTpis();
 // getOneData();
