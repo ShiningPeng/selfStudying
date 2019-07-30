@@ -26,11 +26,11 @@ const getWeatherTpis = function () {
       })
       let todayWeather = [];
       todayWeather.push({
-        day:$('.forecast .days')[0].find('li').eq(0).text().trim(),
-        weather:$('.forecast .days')[0].find('li').eq(1).text().trim(),
-        temperature:$('.forecast .days')[0].find('li').eq(2).text().trim()
+        day: $('.forecast .days')[0].find('li').eq(0).text().trim(),
+        weather: $('.forecast .days')[0].find('li').eq(1).text().trim(),
+        temperature: $('.forecast .days')[0].find('li').eq(2).text().trim()
       })
-      
+
       resolve({ weatherTip, threeDaysData, todayWeather });
       // console.log(weatherTip, threeDaysData);
       console.log(todayWeather);
@@ -78,34 +78,67 @@ const getOneData = function () {
       })
   })
 }
-const getTodayArticleTitle = function () {
+// const getTodayArticleTitle = function () {
+//   return new Promise((resolve, reject) => {
+//     superagent.get('http://wufazhuce.com/')
+//       .end((err, res) => {
+//         if (err) {
+//           reject(err);
+//         }
+//         let $ = cheerio.load(res.text);
+//         //res.text是整个网页的html结构
+//         console.log('res.text:', res.text);
+//         // let $ = cheerio.html(res);
+//         // console.log('cheerio.html:',$);
+//         // cheerio.load
+//         //获取文章标题
+//         let todayArticleTitle = $("#main-container .fp-one-atriculo .corriente");
+//         // console.log(todayArticleTitle);
+//         let articleTitle = {
+//           xuhao: $(todayArticleTitle[0])
+//             .find(".one-titulo"),
+//           // .text().replace(/\s/g, ''),
+//           articleName: $(todayArticleTitle[0]).find(".one-articulo-titulo")
+//         };
+//         resolve(articleTitle);
+//         // console.log('articleTitle:',articleTitle);
+//       })
+//   })
+// };
+const getArticle = function () {
   return new Promise((resolve, reject) => {
-    superagent.get('http://wufazhuce.com/')
-      .end((err, res) => {
-        if (err) {
-          reject(err);
-        }
-        let $ = cheerio.load(res.text);
-        //res.text是整个网页的html结构
-        console.log('res.text:', res.text);
-
-        // let $ = cheerio.html(res);
-        // console.log('cheerio.html:',$);
-        // cheerio.load
-        //获取文章标题
-        let todayArticleTitle = $("#main-container .fp-one-atriculo .corriente");
-        // console.log(todayArticleTitle);
-        let articleTitle = {
-          xuhao:$(todayArticleTitle[0])
-          .find(".one-titulo"),
-          // .text().replace(/\s/g, ''),
-          articleName:$(todayArticleTitle[0]).find(".one-articulo-titulo")
-        };
-        resolve(articleTitle);
-        // console.log('articleTitle:',articleTitle);
-      })
+    superagent.get('http://wufazhuce.com/article/3928').end((err, res) => {
+      if (err) {
+        reject(err);
+      }
+      let $ = cheerio.load(res.text);
+      let oneArticle = $('#main-container .one-articulo');
+      //获取开头句子
+      let startSentence = oneArticle.find('.comilla-cerrar').text().trim();
+      // console.log('startSentence',startSentence);
+      //获取文章标题
+      let articleTitle = oneArticle.find('.articulo-titulo').text().trim();
+      //获取文章作者
+      let articleAuthor = oneArticle.find('.articulo-autor').text().trim();
+      //获取文章的内容
+      let articleContent = oneArticle.find('.articulo-contenido').text().trim();
+      // console.log(articleContent);
+      let article = {
+        startSentence, articleTitle, articleAuthor, articleContent
+      }
+      // let articleCon = [];
+      // articleContent.each((e) => {
+      //   // console.log(e,pNode);
+      //   articleCon.push({
+      //     content:$(articleContent[e]).find('p').text()
+      //   })
+      // })
+      resolve(article);
+      console.log('article:---',article);
+    })
   })
-};
+}
 // getTodayArticleTitle();
-getWeatherTpis();
+// getWeatherTpis();
 // getOneData();
+getArticle();
