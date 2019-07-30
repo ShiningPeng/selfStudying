@@ -140,11 +140,17 @@ const getArticle = function () {
 }
 let getOneQuestion = function(){
   return new Promise((resolve, reject) => {
-    superagent.get('http://wafazhuce.com').end((err, res) => {
+    superagent.get('http://wafazhuce.com/question/2552').end((err, res) => {
       if(err){
         reject(err);
       }
-      let $ = cheerio.load(res.text);
+      let $ = cheerio.load(res);
+      console.log(res);
+      // let question = $('#main-container .one-cuestion');
+      // let oneQuestion = {questionTitle:question.find('.cuestion-q-icono').text().trim(), questionContent:question.find('.cuestion-contenido').text().trim()}
+      let oneQuestion=[];
+      resolve(oneQuestion);
+      // console.log('oneQuestion',oneQuestion);
     })
   })
 }
@@ -152,4 +158,5 @@ let getOneQuestion = function(){
 // getTodayArticleTitle();
 // getWeatherTpis();
 // getOneData();
-getArticle();
+// getArticle();
+getOneQuestion();
