@@ -5,9 +5,15 @@ text-overflow:ellipsis; //打点
 
 
 ##弹性布局水平垂直居中
+方法一：
 display:flex;
 align-items:center; //垂直居中
 justify-content:center; //水平居中
+
+方法二：
+父容器:position:relative
+子容器:position:absolute
+top:0;left:0;transition:transform(-50%,-50%)
 
 #弹性布局
 X轴弹性布局，继承父容器的宽度
@@ -74,4 +80,6 @@ caleY)
    			clear:both; // 清除前面元素
 			}
 	不破坏文档流，没有副作用
+
+
 
