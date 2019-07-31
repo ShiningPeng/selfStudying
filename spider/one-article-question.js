@@ -23,33 +23,42 @@ const getArticle = function () {
       let article = {
         startSentence, articleTitle, articleAuthor, articleContent
       }
-      // let articleCon = [];
-      // articleContent.each((e) => {
-      //   // console.log(e,pNode);
-      //   articleCon.push({
-      //     content:$(articleContent[e]).find('p').text()
-      //   })
-      // })
       resolve(article);
-      console.log('article:---',article);
+      // console.log('article:---',article);
+      fs.writeFile('./article.json', JSON.stringify(article), function (err, res) {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log('article写入成功');
+        }
+      })
     })
   })
 }
-const getOneQuestion = function(){
+const getOneQuestion = function (count) {
   return new Promise((resolve, reject) => {
-    superagent.get('http://wufazhuce.com/question/2553').end((err, res) => {
-      if(err){
+    superagent.get(`http://wufazhuce.com/question/${count}`).end((err, res) => {
+      if (err) {
         reject(err);
       }
       let $ = cheerio.load(res.text);
       // console.log(res);
-      let question = $('#main-container .one-cuestion');
-      let oneQuestion = {questionTitle:question.find('h4').text().trim(), questionContent:question.find('.cuestion-contenido').text().replace(/\s/g, ''), editor:question.find('.cuestion-editor').text().replace(/\s/g, '')}
-      resolve(oneQuestion);
-      console.log('oneQuestion',oneQuestion);
+      let questionDom = $('#main-container .one-cuestion');
+      let question = { questionTitle: questionDom.find('h4').text().trim(), questionContent: questionDom.find('.cuestion-contenido').text().replace(/\s/g, ''), editor: questionDom.find('.cuestion-editor').text().replace(/\s/g, '') }
+      resolve(question);
+      // console.log('oneQuestion',oneQuestion);
+      fs.writeFile('./question.json', JSON.stringify(question), function (err, res) {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log('question写入成功');
+        }
+      })
     })
   })
 }
-
-getArticle();
-getOneQuestion();
+var count = 2240;
+for (let i = count; i < count + 13; i++) {
+  // getArticle(count.stringify());
+  getOneQuestion(JSON.stringify(count));
+}
