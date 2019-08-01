@@ -145,3 +145,42 @@ generator函数是一次只执行到一个yield之后，通过next一步一步�
 
 **怎么改变this的指向呢**
    1.使用es6的箭头函数；2.在函数内部使用that = this；3.使用apply，call，bind； 4.new实例化一个对象
+
+##Object.keys()
+  此方法返回由一个给定对象的自身可枚举属性的数组
+
+##Object.defineProperity()
+此方法用来修改或添加对象上的属性
+Object.defineProperity(对象, 属性, {
+  get(){ 
+    //一般直接return 对象
+   },//读取属性时调用的方法
+  set(newVal){//写入(修改或新增)属性时调用的方法,参数是新值
+    
+  }
+})
+
+##js实现数据双向绑定
+```html
+<div id="app">
+    <input type="text" id="txt" />
+    <p id="show-txt"></p>
+  </div>
+```
+```js
+var obj = {};
+    Object.defineProperty(obj, 'txt', {
+      get() {
+        return obj;
+      },
+      set(newVal) {
+        newVal = document.getElementById('txt').value;
+        document.getElementById('show-txt').innerHTML = newVal;
+      }
+    })
+    document.addEventListener('keyup', function (e) {
+      // console.log(e.target.value);
+      obj.txt = e.target.value;
+    })
+```
+keyup事件是每次键盘按下就会触发的事件，
