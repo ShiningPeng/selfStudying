@@ -49,7 +49,8 @@ getHours()  返回对象的小时数
 **String字符串对象**
 定义了一个字符串后就是属于一个字符串对象，就能够调用作为字符串的一些方法
 var strObj = 'dfhljfaldja';
-1. strObj.length返回字符串的长度
+1. 
+
 2. strObj.toUpperCase() 将字符串的小写字母转化为大写
 3. strObj.toLowerCase() 将字符串的大写字母转化为小写
 4. strObj.charAt(index) 返回指定位置的某个字符，index为下标，index不在0和                  strObj.length-1之间则返回空字符串，其中字符串中的空格也是字符
@@ -312,8 +313,6 @@ var w= document.documentElement.offsetWidth
 var h= document.documentElement.offsetHeight
     || document.body.offsetHeight;
 
-    
-    
 不记得这些具体长啥样可参考：
 https://blog.csdn.net/qq_42089654/article/details/80515916
 
