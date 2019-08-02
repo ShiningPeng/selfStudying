@@ -237,6 +237,15 @@ routes:[{
 #重定向
 routes的path为根目录'/',还有一个redirect属性为'重定向的地址'
 
+##cross-env
+作用：运行跨平台设置（Windows和iOS）和使用环境变量的脚本
+安装：npm install --save-dev cross-env
+切换项目打开的端口：
+在package.json文件的script中修改脚本
+如"script":{
+      "start":"cross-env PORT=4000 node app.js"
+  }
+
 
 
 
