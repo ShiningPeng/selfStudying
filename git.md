@@ -72,4 +72,8 @@ fatal:Could not read from remote repository
 解决：git remote add origin 仓库网址
 git remote -v查看是否连接上了
 
+##git clone报错
+Please make sure you have the correct access rights	and the repository exists.
+克隆时没有权限，这时只需要fork一下，拉到自己的仓库，再克隆自己的仓库到本地就可以了
+
 
