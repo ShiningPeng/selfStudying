@@ -13,7 +13,7 @@
     <!-- 影视 -->
     <!-- 深夜电台 -->
     <!-- 上一个 -->
-    <v-test></v-test>
+    <!-- <v-test></v-test> -->
     <!-- tabbar -->
     <!-- <div> -->
     <!-- <v-tabbar></v-tabbar>  -->
@@ -24,9 +24,9 @@
 
 <script>
 import header from '@/components/header';
-import commont from '@/components/common';
+import commont from '@/components/one-common';
 import tabbar from '@/components/tabbar';
-import test from '@/components/test-vant';
+// import test from '@/components/test-vant';
 
 export default {
   name: "One",
@@ -34,7 +34,6 @@ export default {
     "v-header": header,
     'v-common':commont,
     'v-tabbar':tabbar,
-    'v-test':test
   },
   data() {
     return {   

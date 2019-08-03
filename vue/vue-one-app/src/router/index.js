@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import One from '@/pages/one'
-import Test from '@/components/test-vant'
+import DateNav from '@/components/DateNav'
+import OnePhotography from '@/components/one-photography';
+
+// import Test from '@/components/test-vant'
 
 
 Vue.use(Router)
@@ -14,9 +17,14 @@ export default new Router({
       component: One
     },
     {
-      path:'/test',
-      name:'test',
-      component:Test
+      path: '/d',
+      name: 'DateNav',
+      component: DateNav
+    },
+    {
+      path: '/p',
+      name: 'OnePhotography',
+      component: OnePhotography
     }
   ]
 })

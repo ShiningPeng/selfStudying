@@ -3,13 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-// import { Tabbar, TabbarItem, Icon } from 'vant';
-// import 'vant/lib/tabbar/index.css'
-// import 'vant/lib/tabbar-item/index.css'
 
-// Vue.use(Tabbar).use(TabbarItem).use(Icon);
-
-// import '@/assets/css/iconfont.css'
 
 Vue.config.productionTip = false
 

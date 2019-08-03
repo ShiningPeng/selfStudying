@@ -17,11 +17,12 @@
   ],
   "plugins":[
     "transform-runtime",
-    "transform-vue-jsx",
-    ["import",{
-      "libraryName":"vant",
-      "libraryDirectory":"es",
-      "style":true
-    }]
+    "transform-vue-jsx"
+    // ,
+    // ["import",{
+    //   "libraryName":"vant",
+    //   "libraryDirectory":"es",
+    //   "style":true
+    // }]
   ],
 }

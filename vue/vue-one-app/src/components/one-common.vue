@@ -1,4 +1,3 @@
-
 <template>
 <div>
   <ul>
@@ -24,6 +23,7 @@
           </div>
         </div>
       </div>
+      <div class="white-space"></div>
   </li>
 </ul>
 </div>
@@ -94,4 +94,8 @@ export default {
       // position absolute
       flex: 1 
       text-align: right 
+.white-space
+  background-color #eeeeee
+  width 100%
+  height 10px
 </style>
