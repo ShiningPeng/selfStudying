@@ -2,10 +2,14 @@
   <div class="container">
     <!-- header -->
     <v-header></v-header>
+    <router-link to="/detail">
+      <div class="item-top">
+        <v-common  :items="items" ></v-common>
+      </div>
+    </router-link>
+    
     <!-- 摄影 -->
-    <div class="item-top">
-      <v-common  :items="items" ></v-common>
-    </div>
+    
     <!-- smallNavigator -->
     <!-- one-story -->
     <!-- 问答 -->
@@ -86,4 +90,6 @@ html,body
   .container
     .item-top
       margin-top 50px
+      text-decoration none
+
 </style>
