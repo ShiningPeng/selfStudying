@@ -12,3 +12,11 @@
 
 
 三次握手和四次挥手
+
+##  Cookie, sessionStorage, localStorage的区别
+Cookie: 数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器之间来回传递，又要有接口请求，cookie就会自己上车。而sessionStorage 和 localStorage 不会自动把数据发给服务器，仅在本地保存。cookie还有路径(path)的概念，可以限制cookie只属于某个路径下，这里就是cookie会自己上车，但是指明上哪辆车，存储大小只有4k左右。
+
+sessionStorage：仅在当前浏览器窗口关闭前有效，不能长久保存。
+
+localStorage: 在所有的同源窗口都是共享的，cookie也是在所有同源窗口中共享,localStorage的存储大小在5M左右
+token放在cookie中在http请求可以每次自动返回给后端
