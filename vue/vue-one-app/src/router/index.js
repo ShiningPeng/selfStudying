@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import One from '@/pages/one'
 import DateNav from '@/components/DateNav'
 import OnePhotography from '@/components/one-photography';
+import Detail from '@/pages/detail'
 
 // import Test from '@/components/test-vant'
 
@@ -25,6 +26,11 @@ export default new Router({
       path: '/p',
       name: 'OnePhotography',
       component: OnePhotography
+    },
+    {
+      path: '/detail',
+      name: 'Detail',
+      component: Detail
     }
   ]
 })
