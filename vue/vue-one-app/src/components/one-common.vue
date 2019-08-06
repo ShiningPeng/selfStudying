@@ -3,7 +3,7 @@
   <ul>
     <li  v-for="(item,index) in items" :key="index" >
       <div class='com-coner'>
-        <div class='con-type'>-{{item.type}}-</div>
+        <div class='con-type'>- {{item.type}} -</div>
         <h3 class='title'>{{item.title}}</h3>
         <p class='author'>{{item.author}}</p>
         <div class='pic'>

@@ -4,6 +4,7 @@ import One from '@/pages/one'
 import DateNav from '@/components/DateNav'
 import OnePhotography from '@/components/one-photography';
 import Detail from '@/pages/detail'
+import Author from '@/components/author'
 
 // import Test from '@/components/test-vant'
 
@@ -31,6 +32,11 @@ export default new Router({
       path: '/detail',
       name: 'Detail',
       component: Detail
+    },
+    {
+      path: '/a',
+      name: 'Author',
+      component: Author
     }
   ]
 })
