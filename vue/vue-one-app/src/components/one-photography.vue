@@ -7,12 +7,12 @@
     <p class="one-photography-desc">我爱独处，我从来没有发现比独处更好地伙伴了。在多数情况下，我们外出，到人们中间去时，比呆在自己的屋子里更为孤独。</p>
     <span class="one-photography-source">梭罗《瓦登尔湖》</span>
     <div class="bottom-btn">
-      <span class="discovery"><i></i>发现</span>
+      <span class="discovery"><i class="iconfont">&#xe6b9;</i>发现</span>
       <div class="btn-right">
-        <span class="edit"><i></i>编辑</span>
-        <span class="collect"><i></i>收藏</span>
-        <span class="zhuanfa"><i></i>转发</span>
-        <span class="dianzan"><i></i>8352</span>
+        <span class="edit"><i class="iconfont">&#xe63a;</i></span>
+        <span class="collect"><i class="iconfont">&#xe60b;</i></span>
+        <span class="zhuanfa"><i class="iconfont">&#xe60d;</i></span>
+        <span class="dianzan"><i class="iconfont">&#xe601;</i>8352</span>
       </div>
     </div>
   </div> 

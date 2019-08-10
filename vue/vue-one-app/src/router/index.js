@@ -5,6 +5,7 @@ import DateNav from '@/components/DateNav'
 import OnePhotography from '@/components/one-photography';
 import Detail from '@/pages/detail'
 import Author from '@/components/author'
+import CommentBtn from '@/components/commentButton'
 
 // import Test from '@/components/test-vant'
 
@@ -37,6 +38,11 @@ export default new Router({
       path: '/a',
       name: 'Author',
       component: Author
+    },
+    {
+      path: '/btn',
+      name: 'CommentBtn',
+      component: CommentBtn
     }
   ]
 })
