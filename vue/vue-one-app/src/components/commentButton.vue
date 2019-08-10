@@ -11,6 +11,7 @@
 
 <script>
 export default {
+  name:'commentBtn',
   data() {
     return {
       dianzanCount:1254,

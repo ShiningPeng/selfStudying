@@ -4,6 +4,7 @@ import One from '@/pages/one'
 import DateNav from '@/components/DateNav'
 import OnePhotography from '@/components/one-photography';
 import Detail from '@/pages/detail'
+import Share from '@/pages/share'
 import Author from '@/components/author'
 import CommentBtn from '@/components/commentButton'
 
@@ -43,6 +44,11 @@ export default new Router({
       path: '/btn',
       name: 'CommentBtn',
       component: CommentBtn
+    },
+    {
+      path: '/share',
+      name: 'Share',
+      component: Share 
     }
   ]
 })
