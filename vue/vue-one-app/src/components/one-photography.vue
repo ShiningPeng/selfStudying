@@ -7,7 +7,7 @@
     <p class="one-photography-desc">我爱独处，我从来没有发现比独处更好地伙伴了。在多数情况下，我们外出，到人们中间去时，比呆在自己的屋子里更为孤独。</p>
     <span class="one-photography-source">梭罗《瓦登尔湖》</span>
     <div class="bottom-btn">
-      <span class="discovery"><i class="iconfont">&#xe6b9;</i>发现</span>
+      <span class="discovery"><i class="iconfont">&#xe6b9;</i><span id="text">发现</span></span>
       <div class="btn-right">
         <span class="edit"><i class="iconfont">&#xe63a;</i></span>
         <span class="collect"><i class="iconfont">&#xe60b;</i></span>
@@ -15,6 +15,7 @@
         <span class="dianzan"><i class="iconfont">&#xe601;</i>8352</span>
       </div>
     </div>
+    <div class="white-space"></div>
   </div> 
 
 </template>
@@ -24,7 +25,7 @@ export default {
   name:'onePhotography',
   data () {
     return {
-
+      
     }
   }
 }
@@ -36,7 +37,8 @@ export default {
   // height 500px
   font-size 14px 
   box-sizing border-box
-  border 1px solid #000 
+  // border 1px solid #000 
+  margin-top 50px
   .one-photography-photo
     width 100%
     height 200px
@@ -72,14 +74,19 @@ export default {
     font-size 14px
     display flex
     .btn-right
-      display inline-block
+      display flex
       flex 1
-      .edit
+      .edit, .collect, .zhuanfa
         margin-right 10px
-      .collect
-        margin-right 10px
-      .zhuanfa
-        margin-right 10px
+        flex 1
     .discovery
       flex 1
+      #text
+        font-size 13px
+        margin-left 5px
+        color #808080
+  .white-space
+    background-color #eeeeee
+    width 100%
+    height 10px
 </style>

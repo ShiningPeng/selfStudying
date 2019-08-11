@@ -2,11 +2,15 @@
   <div class="container">
     <!-- header -->
     <v-header></v-header>
-    <router-link to="/detail">
-      <div class="item-top">
+    <v-photography></v-photography>
+    <keep-alive>
+      <!-- <div class="item-top"> -->
         <v-common  :items="items" ></v-common>
-      </div>
-    </router-link>
+      <!-- </div> -->
+      <!-- <router-view></router-view> -->
+    </keep-alive>
+      
+    
     
     <!-- 摄影 -->
     
@@ -30,6 +34,7 @@
 import header from '@/components/header';
 import commont from '@/components/one-common';
 import tabbar from '@/components/tabbar';
+import onePhotography from '@/components/one-photography';
 // import test from '@/components/test-vant';
 
 export default {
@@ -38,6 +43,7 @@ export default {
     "v-header": header,
     'v-common':commont,
     'v-tabbar':tabbar,
+    'v-photography':onePhotography
   },
   data() {
     return {   
@@ -87,11 +93,6 @@ export default {
 html,body
   width 100%
   height 100%
-  .container
-    a 
-      text-decoration none
-    .router-link-active 
-      text-decoration none
   .item-top
     margin-top 50px
     text-decoration none
