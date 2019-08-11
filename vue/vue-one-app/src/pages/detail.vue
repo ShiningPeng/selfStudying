@@ -8,6 +8,7 @@
     <p class="article-edit">{{editor}}</p>
     <div class="article-author-introduction">
       <span class="zuozhe">作者</span>
+      <Author/>
       <!-- <v-personitem></v-personitem> -->
     </div>
     <div class="article-commitlist">
@@ -20,8 +21,12 @@
 </template>
 
 <script>
+import Author from '@/components/author'
 export default {
   name:'detail',
+  components:{
+    Author
+  },
   data () {
     return {
       title:'蝉',

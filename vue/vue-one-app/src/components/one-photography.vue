@@ -41,7 +41,7 @@ export default {
   margin-top 50px
   .one-photography-photo
     width 100%
-    height 200px
+    height 300px
     img 
       width 100%
       height 100%
