@@ -269,4 +269,50 @@ vue的设计是单向数据流，数据的流动只能自上而下，从父组�
 
 ##iconfont改变图标大小
 在该图标的类名中使用font-size即可调整
+
+## vue-lazyload 图片懒加载依赖
+安装：npm install vue-lazyload --save-dev
+在main.js中引入
+import VueLazyload from 'vue-lazyload';
+Vue.use(VueLazyload, {
+  loading:require('./common/images/loading.png')
+});//懒加载的占位图
+需要做懒加载的地方
+<img v-lazy="item.poster" alt="" width="100%" height="100%">
+其中的v-lazy属性
  
+##全局自定义组件注册
+1. 在一个js文件中封装
+```js
+const requireComponent = require.context(
+  //其组件目录的相对路径,
+  //是否查询其子目录(Boolean),
+  //匹配基础组件文件名的正则表达式
+  )
+//抛出
+export default {
+  install: (Vue, option) => {
+    requireComponent.keys().forEach(fileName => {
+      // 获取组件配置
+      const componentConfig = requireComponent(fileName)
+      // 获取组件的 PascalCase 命名
+      const componentName = fileName.replace(/^\.\/(.*)\.\w+$/, '$1')
+      // 全局注册组件
+      Vue.component(
+        componentName,
+        // 如果这个组件选项是通过 `export default` 导出的，
+        // 那么就会优先使用 `.default`，
+        // 否则回退到使用模块的根。
+        componentConfig.default || componentConfig
+      )
+    })
+  }
+}
+```
+2. 在main.js中引入并使用
+```js
+import globalComponents from './common/js/components'
+Vue.use(globalComponents);
+```
+3. 之后在这个文件夹中被全局注册的组件就可以在其他组件直接使用，组件名就是标签名
+
