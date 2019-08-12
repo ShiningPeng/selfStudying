@@ -8,9 +8,6 @@ import Share from '@/pages/share'
 import Author from '@/components/author'
 import CommentBtn from '@/components/commentButton'
 
-// import Test from '@/components/test-vant'
-
-
 Vue.use(Router)
 
 export default new Router({

@@ -9,7 +9,6 @@
     <div class="article-author-introduction">
       <span class="zuozhe">作者</span>
       <Author/>
-      <!-- <v-personitem></v-personitem> -->
     </div>
     <div class="article-commitlist">
       <span class="pinglunliebiao">评论列表</span>
