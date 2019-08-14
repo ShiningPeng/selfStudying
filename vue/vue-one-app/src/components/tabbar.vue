@@ -12,10 +12,8 @@
 </template>
  
 <script>
-// import  Tabbar  from "vant/lib/tabbar";
-// import 'vant/lib/tabbar/style';
-// import  TabbarItem  from "vant/lib/tabbar-item";
-// import 'vant/lib/tabbar-item/style';
+import { Tabbar, TabbarItem } from 'vant';
+
 export default {
   name: "tabbar",
   data() {

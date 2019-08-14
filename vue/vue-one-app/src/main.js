@@ -5,8 +5,10 @@ import App from './App'
 import router from './router'
 
 import '@/assets/css/iconfont/iconfont.styl'
+// import { Tabbar, TabbarItem } from 'vant';
 
-Vue.config.productionTip = false
+// Vue.use(Tabbar).use(TabbarItem);
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({

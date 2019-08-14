@@ -3,12 +3,12 @@
     <!-- header -->
     <v-header></v-header>
     <v-photography></v-photography>
-    <keep-alive>
+    <!-- <keep-alive> -->
       <!-- <div class="item-top"> -->
         <v-common  :items="items" ></v-common>
       <!-- </div> -->
       <!-- <router-view></router-view> -->
-    </keep-alive>
+    <!-- </keep-alive> -->
       
     
     
