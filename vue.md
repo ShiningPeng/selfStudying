@@ -316,3 +316,24 @@ Vue.use(globalComponents);
 ```
 3. 之后在这个文件夹中被全局注册的组件就可以在其他组件直接使用，组件名就是标签名
 
+##vuex
+npm install vuex
+main.js中引入
+import store from './store'
+new Vue({store})
+vue官方有的东西不需要vue.use(store)
+mutations里面是定义方法的，然后在actions中得到调用，或者在组件中引入mapMutations,将其中的方法解构出来，相当于页面中的methods中的方法，通过this调用。
+state中是存储变量的，全局的，可以通过方法来改变其值，或者在页面的中引入mapState，可以在computed属性中解构出来作为数据，相当于computed里面的属性，可以放在页面中渲染。
+actions 用来调用mutation里面方法，也可以在页面中引入mapActions，可以达到相同的效果。
+
+##父组件调用子组件的方法
+给父组件的子组件标签中设置ref,
+this.$refs.子组件的ref.子组件方法()
+
+##另一种使用iconfont库的方法
+a.找到图标添加到项目
+b. 使用 Font class 并查看在线链接，生成链接
+c. 复制链接在项目的index.html中使用link标签引入，其中的href放入生成的链接即可。
+d.在需要使用图标的地方放上该类名即可
+优点：任何时候想要添加图标时，只要重新生成链接替换之前链接即可。较多用在项目开发阶段。和下载到本地方式相比简单许多。
+但是在项目上线之前会使用下载到本地的方式来使用。
