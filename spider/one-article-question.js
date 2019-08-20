@@ -2,14 +2,15 @@ const superagent = require('superagent');
 const fs = require('fs');
 const cheerio = require('cheerio');
 
-const getArticle = function () {
+const getArticle = function (id) {
   return new Promise((resolve, reject) => {
-    superagent.get('http://wufazhuce.com/article/3928').end((err, res) => {
+    superagent.get(`http://wufazhuce.com/article/${id}`).end((err, res) => {
       if (err) {
         reject(err);
       }
       let $ = cheerio.load(res.text);
       let oneArticle = $('#main-container .one-articulo');
+      let articleId = id;
       //获取开头句子
       let startSentence = oneArticle.find('.comilla-cerrar').text().trim();
       // console.log('startSentence',startSentence);
@@ -20,8 +21,9 @@ const getArticle = function () {
       //获取文章的内容
       let articleContent = oneArticle.find('.articulo-contenido').text().trim();
       // console.log(articleContent);
+      let articleEditor = oneArticle.find('.articulo-editor').text().trim();
       let article = {
-        startSentence, articleTitle, articleAuthor, articleContent
+        articleId, startSentence, articleTitle, articleAuthor, articleEditor, articleContent
       }
       resolve(article);
       // console.log('article:---',article);
@@ -44,7 +46,7 @@ const getOneQuestion = function (count) {
       let $ = cheerio.load(res.text);
       // console.log(res);
       let questionDom = $('#main-container .one-cuestion');
-      let question = { questionTitle: questionDom.find('h4').text().trim(), questionContent: questionDom.find('.cuestion-contenido').text().replace(/\s/g, ''), editor: questionDom.find('.cuestion-editor').text().replace(/\s/g, '') }
+      let question = { questionId: count, questionTitle: questionDom.find('h4').text().trim(), questionContent: questionDom.find('.cuestion-contenido').text().replace(/\s/g, ''), editor: questionDom.find('.cuestion-editor').text().replace(/\s/g, '') }
       resolve(question);
       // console.log('oneQuestion',oneQuestion);
       fs.writeFile('./question.json', JSON.stringify(question), function (err, res) {
@@ -57,8 +59,10 @@ const getOneQuestion = function (count) {
     })
   })
 }
-var count = 2240;
-for (let i = count; i < count + 13; i++) {
-  // getArticle(count.stringify());
-  getOneQuestion(JSON.stringify(count));
-}
+getArticle(3956);
+getOneQuestion(2573);
+// var count = 2240;
+// for (let i = count; i < count + 13; i++) {
+//   // getArticle(count.stringify());
+//   getOneQuestion(JSON.stringify(count));
+// }
