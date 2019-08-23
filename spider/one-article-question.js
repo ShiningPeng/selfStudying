@@ -46,7 +46,7 @@ const getOneQuestion = function (count) {
       let $ = cheerio.load(res.text);
       // console.log(res);
       let questionDom = $('#main-container .one-cuestion');
-      let question = { questionId: count, questionTitle: questionDom.find('h4').text().trim(), questionContent: questionDom.find('.cuestion-contenido').text().replace(/\s/g, ''), editor: questionDom.find('.cuestion-editor').text().replace(/\s/g, '') }
+      let question = { id: count, title: questionDom.find('h4').text().replace(/\s/g, ''), content: questionDom.find('.cuestion-contenido').text().replace(/\s/g, ''), editor: questionDom.find('.cuestion-editor').text().replace(/\s/g, '') }
       resolve(question);
       // console.log('oneQuestion',oneQuestion);
       fs.writeFile('./question.json', JSON.stringify(question), function (err, res) {
@@ -59,8 +59,8 @@ const getOneQuestion = function (count) {
     })
   })
 }
-getArticle(3956);
-getOneQuestion(2573);
+// getArticle(3946);
+getOneQuestion(2568);
 // var count = 2240;
 // for (let i = count; i < count + 13; i++) {
 //   // getArticle(count.stringify());
