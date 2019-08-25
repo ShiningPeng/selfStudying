@@ -357,4 +357,36 @@ export default store;
 state全局状态管理
 mutations中定义方法来改变state中存储的变量
 actions 触发/提交 mutations 中定义的方法 ，或者也可以直接通过store.commit('funcName') 来触发
-getters 感觉用处不大，也可以不需要
+getters 感觉用处不大，也不是这样说，这个属性相当于state的计算属性。
+
+## 过渡动画
+过渡动画一般是发生在路由跳转的时候，所以一般定义在全局，也就是App.vue中
+```html
+<transition name="fade">
+  <router-view></router-view>
+</transition>
+
+<style>
+.fade-enter 
+  opacity 0
+.fade-leave
+  opacity 1
+.fade-enter-active
+  transition opacity .5s
+.fade-leave-active
+  opacity 0
+  transition opacity .5s
+</style>
+```
+另外 transition标签只能包裹一个组件，若需要多个组件都具有过渡效果，则需要使用 transition-group 来把所有的 transition 包起来，类似于一下的格式
+<transition-group>
+  <transition name="fade">
+    <router-link></router-link>
+  </transition>
+  <transition name="other">
+    <router-link></router-link>
+  </transition>
+</transition-group>
+
+## 关于组件开发
+在抽离组件时尽量方法的调用，把需要执行的操作交给父组件，子组件只需要向外抛出就行，不要把组件写的有局限性，父组件接收，写具体的操作。需要传入什么参数，就定义什么，在使用的地方传入即可。
