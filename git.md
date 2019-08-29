@@ -8,7 +8,7 @@
 - git  remote add origin 仓库所在的网址
 - git push -u origin master 由于是第一次提交，仓库是空的，所以需要加-u参数
 
-##git提交步骤（已绑定提交仓库）
+## git提交步骤（已绑定提交仓库）
 - git add 文件名/文件夹名
 - git commit -m '所提交文件的备注信息'
 - git pull	将远程仓库拉倒本地
