@@ -34,4 +34,15 @@ for(var i = 0, len = arr.length;i < len;i += 1){}
 ## for-in 循环
 - 用来遍历非数组对象，也称枚举
 - 不遍历数组是因为在原型链上额外添加的方法和属性也会枚举出来，但是这并不是我们遍历所希望的。
-- 可以使用Object.prototype.hasOwnProperty.call(obj, index) 来过滤。
+- 可以使用Object.prototype.hasOwnProperty.call(obj, index) 来过滤。当遇见较长的属性名时，可以用变量将之存起来。
+
+## for循环另一种可读性更强的写法：
+```js
+var hasOwn = Object.prototype.hasOwnProperty;
+for(i in obj) if(hasOwn.call(obj, i)){//过滤
+  console.log(i, ":", obj[i]);
+}
+```
+## 不要随意给内置的原型增加属性
+## switch 写法
+- switch 和 case 同列对齐，每个case语句 接 break 结束，如果条件不需要 break ，则可以适当说明，以免误解代码
