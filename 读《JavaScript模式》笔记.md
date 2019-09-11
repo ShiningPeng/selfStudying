@@ -117,3 +117,17 @@ for(var i = 0; i < 5; i += 1){
 ## 字面量和构造函数
 - 避免使用构造函数，更建议使用字面量的方法。
 - 使用 new Object() 构造函数可能会继承其他人写的遗留代码，返回一个并非期望的不同对象。就是说别人有可能在Object 原型上增加了其他的一些属性或者方法，自己实例化的时候就会继承下来，但这不是希望得到的。
+
+## 使用自定义构造函数来创建对象
+- 除了对象字面量和内置的构造函数之外，还可以使用自定义构造函数来创建对象，es5中没有类的概念，es6才新增了class。之后就像其他面向对象语言可以定义一个class。
+
+## 避免 new 所带来的问题，可以使用that 代替this，最后返回that即可。
+## 检测 this 是否为实例对象的通用方法是将 this 与 argument.callee 进行比较，而不是与构造函数的名称进行比较
+```js
+if(! (this instanceof argument.callee)){
+  return new argument.callee();
+}
+```
+## Object.prototype.toString.call()  可以用来判断任何类型
+## JSON.parse() 和 JSON.stringify()
+## JS 中错误对象，内置错误构造对象，Error(), SyntaxError(), TypeError() 及其他一些错误构造对象都有 throw 语句
