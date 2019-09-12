@@ -7,3 +7,5 @@
 2. 安装element-ui
   - npm i element-ui -S
   - 按需引入需要安装插件:npm install babel-plugin-component -D
+3. 安装stylus
+  - npm i stylus stylus-loader -S
