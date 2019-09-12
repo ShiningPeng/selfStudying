@@ -55,18 +55,40 @@
     .header-nav-item a{
       color: #fff;
     }
-    .header-nav-item a:hover{
-      /* color: black; */
-    }
     .header-inputs{
       width: 100%;
       height: 600px;
+      /* position: relative; */
     }
     .header-inputs-img {
       width: 100%;
       height: 100%;
+      /* position: absolute; */
+      /* position: fixed; */
     }
-    
+    .header-inputs-items{
+      width: 510px;
+      height: 400px;
+      box-sizing: border-box;
+      border: 1px solid #000;
+      margin: 0 auto;
+    }
+    .header-inputs-item{
+      display: block;
+      width: 510px;
+      height: 45px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+    }
+    .header-inputs-item.comment {
+      height: 120px;
+    }
+    .header-inputs-btn{
+      display: block;
+      width: 128px;
+      height: 45px;
+      margin: 0 auto;
+    }
   </style>
 </head>
 <body>
@@ -94,7 +116,7 @@
           <input type="text" class="header-inputs-item" placeholder="your Name">
           <input type="text" class="header-inputs-item" placeholder="your Phone">
           <input type="text" class="header-inputs-item" placeholder="your Email">
-          <input type="text" class="header-inputs-item" placeholder="Write Your Comment Here">
+          <textarea  class="header-inputs-item comment" placeholder="Write Your Comment Here"></textarea>  
           <button class="header-inputs-btn">SEND MESSAGE</button>
         </div>
       </div>
