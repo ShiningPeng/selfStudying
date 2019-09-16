@@ -1,0 +1,8 @@
+print("=====================")
+print("Item\t\t\t\tPrice")
+print("---------------------")
+print("Apple\t\t\t\t0.40")
+print("Pears\t\t\t\t0.50")
+print("Cantaloupes\t\t\t\t1.92")
+print("Dried Apricots\t\t\t\t8.00")
+print("=====================")
