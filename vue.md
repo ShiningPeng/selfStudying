@@ -422,3 +422,15 @@ getters 感觉用处不大，也不是这样说，这个属性相当于state的�
 - Vue.compile()编译 将HTML模板的字符串编译为一个Render对象
 - 富文本编辑器
 - HTTP拦截器和响应器
+
+## vue-cli webpack 配置代理，解决跨域问题，在config/index.js文件中有个 proxyTable属性，这里可以将代理的源地址与目标地址关联起来，之后就能正常工作，也就是解决了跨域问题
+```js
+dev:{
+  //···
+  proxyTable:{
+    'api':{
+      target:'http://api.demo.com',   //本机开发服务的地址
+      changeOrigin:true     //后端服务器的地址
+    }
+  }
+}
