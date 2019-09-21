@@ -260,3 +260,9 @@ html,
       color:#ddddd9;
       margin-top: 20px;
     }
+
+    /* gallery部分样式 */
+    .gallery-img-container{
+      width: 1140px;
+      height: 640px;
+    }
