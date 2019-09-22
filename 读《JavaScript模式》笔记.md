@@ -157,3 +157,30 @@ if(! (this instanceof argument.callee)){
 - 上面这两种都可以创建即时对象
 
 ## Curry化，执行函数的转换过程
+
+## 对象创建模式
+- JavaScript并没有特殊的语法来表示私有、公有或者保护的属性和方法，在这一点上和Java或者其他语言是不同的。JavaScript中所有的对象的成员都是公有的。无论是函数、属性。
+- 虽然js没有私有成员的这种特性，但是可以使用闭包来实现这种功能。
+- 常量使用const定义
+### 对象的链模式：调用同一个方法时可以连载一起
+  - eg：
+  ```js
+  var obj = {
+    name:'zhangsan',
+    setName:function(name){
+      return name || this.name;
+    },
+    getName:functoin(){
+      return this.name;
+    }
+  }
+  obj.setName('li').setName('').getName('wili');
+  ```
+  - 像是vue-cli模板中使用第三方框架时调用组件
+  Vue.use(Button).use(Icon)
+  - 链模式优点：可以省略输入一些字符，还可以创建更加简洁的代码，读起来像是一个句子。帮助您考虑分割函数，以创建更加简短、具有特定功能的函数，而不是创建尝试太多功能的函数，提高了代码的可维护性。
+  - 缺点：这样编写的代码更加难以调试，被称为“火车失事”模式
+  - DOM的API也更加倾向于使用链模式。如document.getElementByTagName('div')[0].appendChild(newNode)
+
+## 代码复用
+- 
