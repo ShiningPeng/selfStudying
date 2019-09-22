@@ -129,6 +129,7 @@ html,
     }
     .about-content{
       margin-top: 20px;
+      /* font-size: 0; */
     }
     .about-left-title {
       /* text-align: center; */
@@ -221,9 +222,9 @@ html,
       color: #fff;
       background-color: #000;
     }
-    .places-btn .explore button{
+    /* .places-btn .explore button{
 
-    }
+    } */
     .about-left-btn,.explore button:hover{
       background-color: #fff;
       color: #797979;
@@ -232,12 +233,14 @@ html,
     /* places部分样式 */
     .places{
       width: 100%;
+      
       font-size: 0;
       margin-top: 100px;
     }
     .places-item{
       width: 25%;
       height: 395px;
+      /* font-size: 0; */
       display: inline-block;
       box-sizing: border-box;
       border: 1px solid #000;
@@ -263,6 +266,40 @@ html,
 
     /* gallery部分样式 */
     .gallery-img-container{
-      width: 1140px;
-      height: 640px;
+      width: 1170px;
+      /* height: 670px; */
+      font-size: 0;
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+    .gallery-img-item{
+      width: 390px;
+      height: 335px;
+      /* padding: 15px; */
+      display: inline-block;
+    }
+    .gallery-item-pic{
+      width: 360px;
+      height: 240px;
+    }
+    .gallery-item-placename{
+      width: 360px;
+      height: 65px;
+      line-height: 65px;
+      padding-left: 15px;
+      font-size: 15px;
+      box-sizing: border-box;
+      background-color: #000;
+      color: #fff;
+    }
+    
+    /* footer部分样式 */
+    .footer{
+      width: 100%;
+      height: 80px;
+      line-height: 80px;
+      font-size: 15px;
+      text-align: center;
+      margin-top: 50px;
+      background-color: #07cbc9;
     }
