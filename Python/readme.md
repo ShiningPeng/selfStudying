@@ -63,3 +63,18 @@ x - 1.2 == 1   -> false
 ## 输出
 - 一般输出格式 print([ 输出项1 ][, 输出项2][, ···][,sep=分隔符][, end = 结束符])
   - sep标识输出时各输出项之间的分隔符，默认为空格，即""  ,end表示每一行以什么结尾，默认为换行，即'\n'
+
+## 字符串的 format()方法
+- 使用大括号"{}"格式说明符，大括号及其里面的字符（称作格式化字符）将会被format()中的参数替换。
+  - eg:
+    print('i am {}'.format('happy'))
+    >>>i am happy
+- 使用"{序号}"形式的格式说明符，在大括号中的数字用于指向输出对象在format()函数中的位置。
+  - eg:
+    print('{0} name is {1}'.\format('my','lihua'))
+    >>>my name is lihua
+- 使用"{键}"形式的格式说明符，大括号中是一个标识符，该标识符会指向使用该名字的参数
+  - print('hi,i am li,{ms}'.format(ms='what's your name?'))
+  >>>hi,i am li,what's your name?
+- 混合使用序号，键形式的格式说明符
+- 输出项的格式控制
