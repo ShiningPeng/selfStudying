@@ -28,6 +28,7 @@ export default {
   height 250px
   border 1px solid #000
   margin 0 auto
+  // font-size 0
   .input-username-box
     .input-item
       margin-bottom 20px
