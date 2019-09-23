@@ -42,6 +42,23 @@
       <el-menu-item index="3" disabled>消息中心</el-menu-item>
       <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
     </el-menu> -->
+    <el-radio-group v-model="labelPosition" size="small">
+      <el-radio-button label="left">左对齐</el-radio-button>
+      <el-radio-button label="right">右对齐</el-radio-button>
+      <el-radio-button label="top">顶部对齐</el-radio-button>
+    </el-radio-group>
+    <div style="margin: 20px;"></div>
+    <el-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign">
+      <el-form-item label="名称">
+        <el-input v-model="formLabelAlign.name"></el-input>
+      </el-form-item>
+      <el-form-item label="活动区域">
+        <el-input v-model="formLabelAlign.region"></el-input>
+      </el-form-item>
+      <el-form-item label="活动形式">
+        <el-input v-model="formLabelAlign.type"></el-input>
+      </el-form-item>
+    </el-form>
   </div>
 </template>
 
@@ -51,17 +68,23 @@ export default {
   data () {
     return {
       activeIndex: '1',
-      activeIndex2: '1'
+      activeIndex2: '1',
+      labelPosition: 'right',
+      formLabelAlign: {
+        name: '',
+        region: '',
+        type: ''
     }
-  },
+  }
+},
   methods: {
-      handleSelect(key, keyPath) {
-        console.log(key, keyPath);
+        handleSelect(key, keyPath) {
+          console.log(key, keyPath);
+        }
       }
-    }
 }
 </script>
 
 <style lang="stylus" scoped>
-  
+
 </style>
