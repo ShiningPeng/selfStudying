@@ -155,7 +155,7 @@ html,
       border: 1px solid #c5c5c5;
     }
     .about-left-context{
-      padding: 30px 25px;
+      padding: 30px 25px 0 25px;
     }
     .about-content-center {
       width: 570px;
@@ -221,10 +221,11 @@ html,
       border: none;
       color: #fff;
       background-color: #000;
-    }
-    /* .places-btn .explore button{
 
-    } */
+    }
+    .explore button{
+      margin-top:20px;
+    }
     .about-left-btn,.explore button:hover{
       background-color: #fff;
       color: #797979;
@@ -233,13 +234,15 @@ html,
     /* places部分样式 */
     .places{
       width: 100%;
-      
       font-size: 0;
+      height: 520px;
+      box-sizing: border-box;
+      border: 1px solid #000;
       margin-top: 100px;
     }
     .places-item{
       width: 25%;
-      height: 395px;
+      height: 50%;
       /* font-size: 0; */
       display: inline-block;
       box-sizing: border-box;
@@ -247,21 +250,21 @@ html,
       background-color: #07cbc9;
     }
     .places-text{
-      padding: 20px 0 0 20px;
+      padding: 10px 0 0 10px;
     }
     .place-name{
-      font-size: 30px;
+      font-size: 25px;
       color: #fff;
     }
     .place-desc{
-      font-size: 17px;
+      font-size: 15px;
       color: #f7f5f5;
-      margin-top: 25px;
+      margin-top: 15px;
     }
     .place-detail{
       font-size: 13px;
       color:#ddddd9;
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     /* gallery部分样式 */
