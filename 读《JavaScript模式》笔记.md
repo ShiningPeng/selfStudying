@@ -183,4 +183,4 @@ if(! (this instanceof argument.callee)){
   - DOM的API也更加倾向于使用链模式。如document.getElementByTagName('div')[0].appendChild(newNode)
 
 ## 代码复用
-- 
+- 代码复用是一个非常重要而有趣的话题，简而言之，这是由于人们很自然的争取编写尽可能少的代码，并且尽可能多的复用自己活着其他人已经编写过的现有代码。尤其是那些具有质量优秀、通过测试、可维护、可扩展性、文档化的可复用代码。
