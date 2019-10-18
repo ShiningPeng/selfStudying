@@ -30,3 +30,5 @@ var str = '14klsj4_75 ji';
 // testQQRegExp
 // console.log(/^[1-9][0-9]{5,10}/.test('4812354785464647'));
 // console.log(/\d{6,10}/.test('163643544244'))
+var a = 3 + 2 + '7';
+console.log(typeof a);
