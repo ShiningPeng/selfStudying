@@ -1,0 +1,86 @@
+<!-- edu_13_4_4.html -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5的input标记新增部分属性的应用</title>
+    <style>
+        input {
+            outline: none;
+            border: 1px solid grey;
+            text-indent: 5px;
+        }
+
+        input:required {
+            border-right: 3px solid red;
+        }
+
+        form label {
+            display: inline-block;
+            width: 70px;
+            text-align: right;
+        }
+
+        .oneline {
+            height: 50px;
+        }
+
+        .submit {
+            text-align: center;
+        }
+
+        #submit {
+            text-indent: 0;
+            width: 70px;
+            height: 30px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #submit:hover {
+            background-color: orange;
+            color: #fff;
+        }
+
+        .msg {
+            height: 20px;
+            color: red;
+            font-size: 12px;
+            margin-left: 75px;
+            margin-top: 5px;
+        }
+        .rightMsg {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="http://www.jxufe.cn">
+        <div class="oneline">
+            <label for="username">用户名：</label>
+            <input id="username" type="text" name="username" required placeholder="username">
+            <div id="usernameMsg" class="msg rightMsg"></div>
+        </div>
+        <div class="oneline">
+            <label for="password">密码：</label>
+            <input id="password" type="password" name="password" required placeholder="password">
+        </div>
+        <div class="oneline">
+            <label for="email">邮件：</label>
+            <input id="email" type="txt" name="email" placeholder="email">
+        </div>
+        <!-- <div class="oneline">
+            <label for="male">性别:</label>
+            <label for="male">男</label><input id="male" type="radio" name="sex" value="male">
+            <label for="female">女</label><input id="female" type="radio" name="sex" value="female">
+        </div> -->
+        <div class="oneline submit">
+            <input id="submit" type="submit" value="注册">
+        </div>        
+    </form>
+</body>
+<script src="form.js"></script>
+
+</html>
