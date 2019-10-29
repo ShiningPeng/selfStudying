@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Regular Expression</title>
+</head>
+
+<body>
+    <input type="text" id="txt"><br />    
+    <span id="msg">Test Result
+    </span><br />
+    <button id="btn">Test</button>
+    <script>
+        var s;
+        var r = /^[0123456789]$/;
+        var r1 = /abcd/;
+        var r2 = /[acd]/;
+        var r3 = /[a-z]/;
+        var r4 = /^[a-z][A-Z][0-9]$/;
+        var r5 = /^[a-zA-Z]/;
+        var r5 = /^[A-z]/;
+        var r6 = /^[sS][0-9][0-9][0-9]X$/;
+        // 元字符 meta-char: [, ], ^, $
+        var r7 = /[0-9\-]/; //转义
+        // 字符组的简写 \d \w \s \D \W \S
+        // \d [0-9]  \w [a-zA-Z0-9_] \s [ \t\n\r\v\f]
+        // \D [^0-9]  \W [^a-zA-Z0-9_] \S [^ \t\n\r\v\f]
+        var r8 = /^[^0-9][0-9]$/;        
+        var r9 = /^\d\d\d\d\d\d$/;
+        // 量词 {n} {n,m} {n,} {0,n}
+        var r10 = /^1\d{10}$/;  // mobile
+        var r11 = /^\d{18}$/;   // id
+        // 量词的简写 * {0,}    + {1,}    ? {0,1}
+        var r12 = /^\d*$/; // 任意多个，可以是0
+        var r13 = /^\d+$/; // 至少1个
+        var r13 = /^\d?$/; // 0个或1个
+        // match color or colour
+        var r14 = /^colou?r$/
+        // 分组 （） 身份证号码 
+        var r15 = /^(ab)+$/;
+        var r16 = /^[1-9]\d{16}[0-9xX]$/; // 18位身份证号码
+        var r16 = /^[1-9]\d{14}\d{2}[0-9xX]$/; // 18位身份证号码
+        var r17 = /^[1-9]\d{14}$/; // 15位
+        
+        var r18 = /^[1-9]\d{14}(\d{2}[0-9xX])?$/;
+        
+        // 多选结构 |
+        var r19 = /^([1-9]\d{16}[0-9xX] | [1-9]\d{14})$/;
+
+        // 163用户名
+        var r20 = /^[a-zA-Z]\w{5,17}$/;
+
+        var btn = document.getElementById("btn");
+        var txt = document.getElementById("txt");
+        var msg = document.getElementById("msg");
+        btn.addEventListener("click", function () {
+            s = txt.value;
+            msg.innerText = r15.test(s);
+        });
+    </script>
+</body>
+
+</html>
