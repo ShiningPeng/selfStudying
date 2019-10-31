@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/index.js"></script>
+</head>
+<body>
+  <form class="container">
+    <button class="tap-button">注册免费邮箱</button><br/>
+    <span class="tips">*邮件地址</span><input type="text" name="address" id="address">&nbsp;@
+    <select name="houzui" id="houzui">
+      <option value="163.com">163.com</option>
+      <option value="126.com">126.com</option>
+      <option value="yeah.net">yeah.net</option>
+    </select>
+    <br/>
+    <div class="under-tip">6~18个字符，可使用字母、数字、下划线，需以字母开头</div>
+    <br/>
+    <span class="tips">*密码</span><input type="text" id="password" name="password">
+    <br/>
+    <div class="under-tip">6~16个字符，区分大小写</div>
+    <br/>
+    <span class="tips">*确认密码</span><input type="text" id="check-password" name="check-password">
+    <br/>
+    <div class="under-tip">请再次填写密码</div>
+    <br/>
+    <span class="tips">*验证码</span><input type="text" name="verification-code" id="verification-code">
+    <br/>
+    <div class="under-tip">请填写图片中的字符，不区分大小写</div>
+    <br/>
+    <span class="tips">*手机号码</span><input type="text" value="+86-" name="telephone" id="telephone">
+    <br/>
+    <div class="under-tip">请编辑短信：222发送到106981630163222，以确保账号安全。</div>
+    
+    <div class="under-tip meg">(短信费用由运营商收取)</div>
+    <br/>
+    <input type="checkbox" name="agree-items" id="agree-items">同意<a href="#">《服务条款》</a>、<a href="#">《隐私政策》</a>和<a href="#">《儿童隐私政策》</a>
+    <br/>
+    <button type="submit" class="submit-btn">已发送短信验证，立即注册</button>
+  </form>
+</body>
+</html>
