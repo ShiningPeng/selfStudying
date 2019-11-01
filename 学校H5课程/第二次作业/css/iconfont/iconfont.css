@@ -1,0 +1,25 @@
+@font-face {font-family: "iconfont";
+  src: url('./iconfont.eot?t=1572570082176'); /* IE9 */
+  src: url('./iconfont.eot?t=1572570082176#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAQEAAsAAAAACBgAAAO1AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqDfIMrATYCJAMMCwgABCAFhG0HPBv3BlFUbepkH4dxDLmEKIvJJgROhv85Hv7b73/7zMyVb5okiUZtvvpPovEncSBSSZQCIRHxEgnFEyG9+d6zpi/LZOGky+lSLiZpqtSHr3SP8B/Ahe7POLic/jfE57U0x7WXLgwwDiigsTZt4QIJEGNvGLugJa4n0G1KNMFeaXUzsFOY3QJxxTJiYJdRKw25oRXqirFlRLBUpU1v0m3A2+Dz8U9i2JFUmbnR/mWJDOT/FL2pwfgO7yxbvJ7OCDaJjGVAIS4qzUewKLwM062KrZpTa0VIU/n+/ydga8La+sMjCaJmZveCeRRJ/BQ57ERSA7lXzXm4zjUavAd8lzSjTKZQ31rh+z32Ljx7divsArHr1LlNgA9fudbj8ePmfZci9u0Dq/Z5ix3yXLWO30itPIvPbz38tPXxYyp/7d5U3fOh69dbNpDPnjXdfIocmavXe9kDBZYj5J4LC06dC2nZ/DRw+9Ps63yOEAvOea7bJOTXUjwF+cd9rlYufQlEdUJtdVIt0SIkgoVeHj6hRJuHZyjlHRrm7dkaQlIhwYk9mGyOfnX7VUt9cGXQhfCHPv1c1mXSJ2qRRh+LGwOOxcgcRWcUBy5WC7+OudXPrVCEfHkwuJSKzav4UjUnpj+mrcj0UjD50cWd7Pd78C9EXpxZM23e7/MyYaNLh9/Tok+bylknEhuczA+WP7w0opmLdxXosTI30ubBu1gyf/DBX8J+opSMmi+yKQde/x8ufLgrO7uwtbasrba18HOOxJ0Q//olJjyFiiWDooHgwvDCwbZCr2H30GC3pcWD+F2KeGzuvqx0GPQD6PAlFLNA/pM+/87v+KAbqO5zzv5qRxTwY3TnWMDvbm2le5P4eXklHQDKLOeZqlwU7wYApWtEdusH9Uro1o0OsA8bGi4fe0HR0BpLIGlMQtaaRgt+GSo9VqDW2oRuS8om9xihh4nShUWzAIRBRyDp9xWyQXfQgh+Eyri3UBsMDLodhPucPWaDxYv0SGxEMiiZBlkpp6FtnREPcxsRY1KJ9WleQGhFegPrgwmx8flYGdIg/RQDDGYm0WikIa3n1LAUbIZUKg5q9ZwCSY2xcqNRmxkXR1ddKVbKqQFulx4iZoTIQBLTQCwpjgbtVTbCC+9vhDBMVMT0DSVV1laIngFbO5QgVnwHtEys6VRyK5cYmDESGRnRIJoeRw0qBUZEZYU5kLa6lQIiZRRLPiColSkOlaO7imOXl6rfbxV0M4/JkSJH0bxiNYxczNlNl3MahjFxAAAAAAA=') format('woff2'),
+  url('iconfont.woff?t=1572570082176') format('woff'),
+  url('iconfont.ttf?t=1572570082176') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1572570082176#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 10px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-xinghao:before {
+  content: "\e64d";
+}
+
+.icon-zhongguo:before {
+  content: "\e621";
+}
+

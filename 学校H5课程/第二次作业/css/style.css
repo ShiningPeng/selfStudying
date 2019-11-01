@@ -1,18 +1,21 @@
-html,body{
+html, body {
   width: 100%;
   height: 100%;
 }
-.container{
+
+.container {
   width: 500px;
   margin: 0 auto;
   padding: 20px 0;
   font-size: 14px;
   border: 1px solid #000;
 }
-button{
+
+button {
   text-indent: none;
 }
-input{
+
+input {
   height: 30px;
   /* border: none; */
   outline: none;
@@ -21,13 +24,16 @@ input{
   text-indent: 5px;
   font-weight: 700;
 }
-input:hover{
+
+input:hover {
   border: 1px solid #000;
 }
-select{
+
+select {
   height: 30px;
 }
-.tap-button{
+
+.tap-button {
   display: block;
   width: 170px;
   height: 35px;
@@ -40,7 +46,8 @@ select{
   border-radius: 5px;
   /* margin-top: 20px; */
 }
-.tips{
+
+.tips {
   display: inline-block;
   width: 100px;
   height: 30px;
@@ -49,24 +56,30 @@ select{
   font-size: 14px;
 }
 
-.under-tip{
+.under-tip {
+  /* display: inline-block; */
   font-size: 12px;
   color: #999;
   margin-left: 120px;
 }
-.meg{
+
+.meg {
   margin-left: 200px;
 }
-#address{
+
+#address {
   width: 215px;
 }
-#password, #check-password, #telephone{
+
+#password, #check-password, #telephone {
   width: 335px;
 }
-#verification-code{
+
+#verification-code {
   width: 210px;
 }
-.submit-btn{
+
+.submit-btn {
   display: block;
   width: 200px;
   height: 40px;
@@ -79,6 +92,35 @@ select{
   border: none;
   /* border-radius: 5px; */
 }
-#agree-items{
+
+#agree-items {
   font-size: 14px;
+}
+
+.verify-code-wrapper {
+  display: inline-block;
+  width: 125px;
+  height: 60px;
+  margin-left: 5px;
+  
+  /* border: 1px solid #000; */
+  text-align: center;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.verify-code {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 30px;
+  border: 1px solid #e7e7e7;
+  margin-bottom: 5px;
+}
+
+.verify-code-text {
+  font-size: 12px !important;
+}
+.verify-tip{
+  /* display: inline-block !important; */
 }
