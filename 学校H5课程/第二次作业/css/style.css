@@ -8,7 +8,7 @@ html, body {
   margin: 0 auto;
   padding: 20px 0;
   font-size: 14px;
-  border: 1px solid #000;
+  border: 1px solid #999;
 }
 
 button {
@@ -17,7 +17,6 @@ button {
 
 input {
   height: 30px;
-  /* border: none; */
   outline: none;
   border: 1px solid #999;
   border-radius: 3px;
@@ -44,7 +43,6 @@ select {
   color: #fff;
   border: none;
   border-radius: 5px;
-  /* margin-top: 20px; */
 }
 
 .tips {
@@ -57,7 +55,6 @@ select {
 }
 
 .under-tip {
-  /* display: inline-block; */
   font-size: 12px;
   color: #999;
   margin-left: 120px;
@@ -86,11 +83,10 @@ select {
   text-align: center;
   margin-top: 20px;
   margin: 0 auto;
-  font-size: 16px;
+  font-size: 15px;
   background-color: green;
   color: #fff;
   border: none;
-  /* border-radius: 5px; */
 }
 
 #agree-items {
@@ -102,14 +98,12 @@ select {
   width: 125px;
   height: 60px;
   margin-left: 5px;
-  
-  /* border: 1px solid #000; */
   text-align: center;
   box-sizing: border-box;
   vertical-align: middle;
 }
 
-.verify-code {
+#verify-code {
   width: 100%;
   height: 50px;
   line-height: 50px;
@@ -121,6 +115,33 @@ select {
 .verify-code-text {
   font-size: 12px !important;
 }
-.verify-tip{
-  /* display: inline-block !important; */
+
+.iconfont {
+  color: red;
+}
+
+#agree-items {
+  margin-left: 120px;
+  margin-right: 5px;
+}
+
+/* 符合条件的输入时标绿提示文字 */
+
+.address-right, .password-right, .re-password-right {
+  color: #53AD3F;
+}
+
+/* 输入不正确时标红的提示文字 */
+
+.address-wrong, .password-wrong, .re-password-wrong {
+  color: #CC0000;
+}
+
+input[type='checkbox'] {
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  -webkit-appearance: none;
+  border-radius: 2px;
+  outline: none;
 }
