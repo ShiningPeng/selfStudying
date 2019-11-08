@@ -1,12 +1,12 @@
 ## vue快速搭建框架
-vue init webpack name
-cd /name
-npm run dev
+- vue init webpack name
+- cd /name
+- npm run dev
 
 
 ## 移动端的自适应 px2rem
-npm install px2rem-loader --save-dev
-assets/css/function.stylus
+- npm install px2rem-loader --save-dev
+- assets/css/function.stylus
  px2rem($px)
         return ($px / 2) * 1rem
 在需要写样式为px时，可以在所在的文件引入此文件，将px转化为rem
