@@ -3,6 +3,7 @@ import './style.css'
 import Axios from 'axios'
 import XiaojiejieItem from './XiaojiejieItem'
 import Box from './Box'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 class Xiaojiejie extends Component {
     // 在某一时刻可以自动执行的函数成为生命周期函数
@@ -22,9 +23,9 @@ class Xiaojiejie extends Component {
     componentDidMount() {
         // console.log('componentDidMount---组件挂载完成的时刻')
         Axios.post('http://rap2.taobao.org:38080/app/mock/261420/xiaojiejie').then((res) => {
-            console.log('获取数据成功',JSON.stringify(res))
+            console.log('获取数据成功', JSON.stringify(res))
             this.setState({
-                list:res.data.data
+                list: res.data.data
             })
         }).catch(error => {
             console.log('获取数据失败' + error)
@@ -57,14 +58,14 @@ class Xiaojiejie extends Component {
     // shouldComponentUpdate() {
     //     console.log('shouldComponentUpdate')
     //     return true
-        // 需要返回一个布尔值，true或者false,一般情况必须要写true，
-        // 否则不执行后面函数如componentWillUpdate和render
+    // 需要返回一个布尔值，true或者false,一般情况必须要写true，
+    // 否则不执行后面函数如componentWillUpdate和render
     // }
     // componentWillUpdate() {
     //     console.log('componentWillUpdate')
     // }
 
-    
+
     // componentDidUpdate() {
     //     console.log('componentDidUpdate')
     // }
@@ -86,18 +87,28 @@ class Xiaojiejie extends Component {
                     />
                     <button onClick={this.addList.bind(this)}>增加服务</button></div>
                 <ul ref={(ul) => this.ul = ul}>
-                    {
-                        this.state.list.map((item, index) => {
-                            return (
-                                <XiaojiejieItem
-                                    key={index + item}
-                                    content={item}
-                                    index={index}
-                                    deleteItem={this.deleteItem.bind(this)}
-                                />
-                            )
-                        })
-                    }
+                    <TransitionGroup>
+                        {
+                            this.state.list.map((item, index) => {
+                                return (
+                                    <CSSTransition
+                                        timeout={2000}
+                                        classNames='boss-text'
+                                        unmountOnExit
+                                        appear='true'
+                                        key={index+item}
+                                    >
+                                    <XiaojiejieItem
+                                        key={index + item}
+                                        content={item}
+                                        index={index}
+                                        deleteItem={this.deleteItem.bind(this)}
+                                    />
+                                    </CSSTransition>
+                                )
+                            })
+                        }
+                    </TransitionGroup>
                 </ul>
                 <Box />
             </Fragment>
