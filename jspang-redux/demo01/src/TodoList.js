@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import store from './store'
-import {  changeInputAction, addItemAction, deleteItemAction, getListAction } from './store/actionCreators'
+import { getTodoList, changeInputAction, addItemAction, deleteItemAction } from './store/actionCreators'
 import TodoListUI from './TodoListUI';
-import axios from 'axios'
 
 
 
@@ -20,12 +19,14 @@ export default class TodoList extends Component {
 
 
     componentDidMount() {
-        axios.get('http://rap2.taobao.org:38080/app/mock/261420/getList').then((res) => {
-            // console.log(res)
-            const data = res.data.data.list
-            const action = getListAction(data)
-            store.dispatch(action)
-        })
+        // axios.get('http://rap2.taobao.org:38080/app/mock/261420/getList').then((res) => {
+        //     // console.log(res)
+        //     const data = res.data.data.list
+        //     const action = getListAction(data)
+        //     store.dispatch(action)
+        // })
+        const action = getTodoList()
+        store.dispatch(action)
     }
 
     changeInputValue(e) {
