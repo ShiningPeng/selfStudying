@@ -33,7 +33,9 @@ a === b //false
 两个等号会引发隐式类型转换，在这题中，右侧的对象会变为Number类型
 *******
 6. 在class中，如果函数或者变量有static修饰，那么这个函数或者变量只存在于这个构造函数中，实例化的对象不能访问到static属性下的函数或者变量
+******
 7. js中一切皆对象（原始类型除外）
+******
 8. 没有使用new关键字来实例化对象时，创建的新对象属于全局
 ```js
 function person(name,age){
@@ -47,11 +49,14 @@ console.log(p2);   //undefined
 global.name = "zhangsan";
 global.age = 16;
 ```
+******
 9. 事件传播的三个阶段：捕获 =》目标 =》冒泡
+******
 10. 所有对象都有原型//false，原型链终点的对象的原型为null
+******
 11. 二元加号运算的四个步骤：
     - 值进行GetValue()
     - 值进行ToPrimitive()
     - 若一方为String类型，则两个操作数都进行ToString()
     - 若两个操作数都不是String类型，则两个操作数都进行ToNumber()转换，然后进行算数运算
-
+******
