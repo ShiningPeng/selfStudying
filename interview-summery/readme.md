@@ -77,3 +77,80 @@ foo``
 ```
     - 如果使用标记的模板字符串，则第一个参数值始终是字符串值的数组，其余参数获取传递到字符串的表达式的值，即通过${}传递的变量的值
 *******
+14. 在比较相等性时，原始类型通过他们的值比较，而对象通过他们的引用比较，看内存位置是否一致，函数参数和函数体中的变量或者字面量的内存位置是不一样的
+```js
+function checkAge(data) {
+  if (data === { age: 18 }) {
+    console.log("You are an adult!");
+  } else if (data == { age: 18 }) {
+    console.log("You are still an adult.");
+  } else {
+    console.log(`Hmm.. You don't have an age I guess`);
+  }
+}
+
+checkAge({ age: 18 });
+//Hmm.. You don't have an age I guess
+```
+******
+15. typeof 的返回值取值
+    - **undefined**,**object**,**boolean**,**number**,**biging(es2020)**,**string**,**symbol**,**function**
+    - 取值不包括 **array**,**NaN**
+```js
+typeof [1,2,3] === "object"  //true
+```
+******
+16. 使用"use strict"
+    - 使用"use strict"可以确保不会意外地声明全局变量，当变量未声明便使用时会触发ReferenceError
+*******
+17. eval()
+    - 这个函数会计算字符串中的值，即如果字符串是表达式，则会进行计算
+```js
+eval("10*10+5")  //105
+```
+******
+18. 存储在sessionStorage中的数据在关闭选项卡后会被删除
+******
+19. 对象是由若干key-value键值对组成的集合，所有对象的key值（symbol除外）都会被存储为字符串
+```js
+const obj = { 1: "a", 2: "b", 3: "c" };
+const set = new Set([1, 2, 3, 4, 5]);
+
+obj.hasOwnProperty("1");
+obj.hasOwnProperty(1);
+set.has("1");
+set.has(1);
+// true true false true
+```
+******
+20. map、set
+    - Map：键值对合集，map对象有set,has,get,delete等方法
+    - Set：key的集合，set对象中没有重复的key，set对象有add,delete等方法
+******
+21. 对象中重复的key值
+    - 普通对象中的key值是可以重复的，但是相同key值的value，后面会覆盖前面的
+```js
+const obj = { a: "one", b: "two", a: "three" };
+console.log(obj);
+//{ a:"three", b:"two" }
+```
+******
+22. 一个对象作为另一个对象的key
+    - 当一个对象作为另一个对象的key时，作为key值的这个对象会发生隐式类型转换为字符串"[object object]"
+```js
+const a = {};
+const b = { key: "b" };
+const c = { key: "c" };
+
+a[b] = 123;     //a["object object"] =  123
+a[c] = 456;     //a["object object"] =  456
+
+console.log(a[b]);    //456
+```
+*******
+23. this指针的指向
+    - es5，this指针永远指向最后调用它的那个对象
+    - es6，箭头函数中没有this绑定，必须通过作用域链来决定其值，
+    如果箭头函数被非箭头函数包含，则this绑定的是最近一层非箭头函数的this，
+    否则为undefined
+******
