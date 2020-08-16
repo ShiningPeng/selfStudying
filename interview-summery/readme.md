@@ -56,10 +56,10 @@ global.age = 16;
 ### 10. 所有对象都有原型//false，原型链终点的对象的原型为null
 ******
 ### 11. 二元加号运算的四个步骤：
-    - 值进行GetValue()
-    - 值进行ToPrimitive()
-    - 若一方为String类型，则两个操作数都进行ToString()
-    - 若两个操作数都不是String类型，则两个操作数都进行ToNumber()转换，然后进行算数运算
+- 值进行GetValue()
+- 值进行ToPrimitive()
+- 若一方为String类型，则两个操作数都进行ToString()
+- 若两个操作数都不是String类型，则两个操作数都进行ToNumber()转换，然后进行算数运算
 ******
 ### 12. ++
 - 后缀一元运算符 ++
