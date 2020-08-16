@@ -154,3 +154,42 @@ console.log(a[b]);    //456
     如果箭头函数被非箭头函数包含，则this绑定的是最近一层非箭头函数的this，
     否则为undefined
 ******
+24. js中的6个假值
+- **undefined**
+- **null**
+- **NaN**
+- **0**
+- **false**
+- **""(空字符串)**
+*******
+25. typeof 的返回值
+- typeof 的返回值是字符串
+```js
+typeof 1 //"number"
+typeof typeof 1 === "string"
+```
+*******
+26. 数组中未赋值的元素
+- 未赋值的元素为空插槽（empty），实际值为undefined
+```js
+const arr = [1, 2, 3]
+arr[10] = 11
+console.log(arr)
+//[1, 2, 3, 7*empty,11]
+```
+******
+27. try catch finally
+- try catch finally语句可以嵌套
+- 语句标记要try的语句块，并指定一个出现异常时抛出的响应
+- 过程：
+    1. 执行try，若try中任何一句语句抛出异常则执行2，若没有抛出异常，则跳过catch语句块
+    2. 执行catch语句块
+    3. finally中的语句是一定会执行的，在下一个try之前执行，无论try中语句是否抛出异常
+*******
+28. js中所有内容都是原始类型或者对象
+*******
+29. reduce函数
+- 接收参数
+    **arr.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])**
+- 其作用有：数组求和，二维数组化为一维数组等
+- 详情可参考[reduce函数](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
