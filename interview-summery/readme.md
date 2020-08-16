@@ -62,15 +62,15 @@ global.age = 16;
     - 若两个操作数都不是String类型，则两个操作数都进行ToNumber()转换，然后进行算数运算
 ******
 ### 12. ++
-    - 后缀一元运算符 ++
-        1. 先返回值
-        2. 增加值
-    - 前缀一元运算符 ++
-        1. 先增加值
-        2. 返回值
+- 后缀一元运算符 ++
+    1. 先返回值
+    2. 增加值
+- 前缀一元运算符 ++
+    1. 先增加值
+    2. 返回值
 ********
 ### 13. 模板字符串
-    - 函数名``  构成**标签函数**
+- 函数名``  构成**标签函数**
 ```js
 function foo(){}
 foo``
@@ -94,17 +94,17 @@ checkAge({ age: 18 });
 ```
 ******
 ### 15. typeof 的返回值取值
-    - **undefined**,**object**,**boolean**,**number**,**biging(es2020)**,**string**,**symbol**,**function**
-    - 取值不包括 **array**,**NaN**
+- **undefined**,**object**,**boolean**,**number**,**biging(es2020)**,**string**,**symbol**,**function**
+- 取值不包括 **array**,**NaN**
 ```js
 typeof [1,2,3] === "object"  //true
 ```
 ******
 ### 16. 使用"use strict"
-    - 使用"use strict"可以确保不会意外地声明全局变量，当变量未声明便使用时会触发ReferenceError
+- 使用"use strict"可以确保不会意外地声明全局变量，当变量未声明便使用时会触发ReferenceError
 *******
 ### 17. eval()
-    - 这个函数会计算字符串中的值，即如果字符串是表达式，则会进行计算
+- 这个函数会计算字符串中的值，即如果字符串是表达式，则会进行计算
 ```js
 eval("10*10+5")  //105
 ```
@@ -124,11 +124,11 @@ set.has(1);
 ```
 ******
 ### 20. map、set
-    - Map：键值对合集，map对象有set,has,get,delete等方法
-    - Set：key的集合，set对象中没有重复的key，set对象有add,delete等方法
+- Map：键值对合集，map对象有set,has,get,delete等方法
+- Set：key的集合，set对象中没有重复的key，set对象有add,delete等方法
 ******
 ### 21. 对象中重复的key值
-    - 普通对象中的key值是可以重复的，但是相同key值的value，后面会覆盖前面的
+- 普通对象中的key值是可以重复的，但是相同key值的value，后面会覆盖前面的
 ```js
 const obj = { a: "one", b: "two", a: "three" };
 console.log(obj);
@@ -136,7 +136,7 @@ console.log(obj);
 ```
 ******
 ### 22. 一个对象作为另一个对象的key
-    - 当一个对象作为另一个对象的key时，作为key值的这个对象会发生隐式类型转换为字符串"[object object]"
+- 当一个对象作为另一个对象的key时，作为key值的这个对象会发生隐式类型转换为字符串"[object object]"
 ```js
 const a = {};
 const b = { key: "b" };
@@ -149,10 +149,10 @@ console.log(a[b]);    //456
 ```
 *******
 ### 23. this指针的指向
-    - es5，this指针永远指向最后调用它的那个对象
-    - es6，箭头函数中没有this绑定，必须通过作用域链来决定其值，
-    如果箭头函数被非箭头函数包含，则this绑定的是最近一层非箭头函数的this，
-    否则为undefined
+- es5，this指针永远指向最后调用它的那个对象
+- es6，箭头函数中没有this绑定，必须通过作用域链来决定其值，
+如果箭头函数被非箭头函数包含，则this绑定的是最近一层非箭头函数的this，
+否则为undefined
 ******
 ### 24. js中的6个假值
 - **undefined**
