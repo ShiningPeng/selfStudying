@@ -26,6 +26,7 @@ for(var i=0;i<3;i++) {
 - 值进行ToPrimitive()
 - 若一方为String类型，则两个操作数都进行ToString()
 - 若两个操作数都不是String类型，则两个操作数都进行ToNumber()转换，然后进行算数运算
+- 详细的+号一元和二元操作可以参考文章[JavaScript 加号运算符详解](https://www.cnblogs.com/polk6/p/js-adv-addopr.html)
 ******
 ### 5. ++
 - 后缀一元运算符 ++
@@ -34,7 +35,6 @@ for(var i=0;i<3;i++) {
 - 前缀一元运算符 ++
     1. 先增加值
     2. 返回值
-- 详细的+号一元和二元操作可以参考文章[JavaScript 加号运算符详解](https://www.cnblogs.com/polk6/p/js-adv-addopr.html)
 ********
 ### 6. js解析语法，匹配方括号时，先匹配左括号\[，然后去找右括号\]，找到右括号后才会计算[]中的表达式
 ******
