@@ -33,6 +33,7 @@ import  Table  from './Table';
 ```
 或者联合路由组件使用
 <Route path="/table" component={Table} />
+
 4. 标签中有变量或者函数的话，需要在render外定义，变量写在state中，函数判断是不是全局的，是的话写在class外，不是的话就写在class内，变量的改变是通过this.setState，就像小程序的setData一样，另外在state中定义的变量如果在render中需要使用的话需要将其解构出来
   const { spinning, fileList, previewVisible, previewImage } = this.state;
 5. 如果是将某些功能单独拎出来作为组件写的话需要在最后向外输出这个类
@@ -72,7 +73,7 @@ componentWillMount、componentDidMount、render
   <button onClick={() => setParentCount(parentCount + 1)}>setParentCount</button>
 
 ## redux和react-redux
-redux     单向数据流的思想，action,reducer,state都是属于redux的，是一个js库，原生js
-react-redux 把redux的很多东西封装成了组件
+- redux     单向数据流的思想，action,reducer,state都是属于redux的，是一个js库，原生js
+- react-redux 把redux的很多东西封装成了组件
 
 

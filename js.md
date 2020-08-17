@@ -13,13 +13,14 @@ JSON.parse()把json字符串又转成json对象
 3. 不能重复声明
 
 ## concat() 方法
-用于连接两个或多个数组
-用法：arrayObject.concat(arrayX,arrayX,......,arrayX)
-Math.round()方法用于向下取整
-Math.ceil()方法用于四舍五入
+- 用于连接两个或多个数组
+- 用法：arrayObject.concat(arrayX,arrayX,......,arrayX)
+## Math取整
+- Math.round()方法用于向下取整
+- Math.ceil()方法用于四舍五入
 
 ## 正则表达式
-可处理正则表达式的方法有regexp.exec、regexp.test、string.match、string.replace、string.search和string.split
+- 可处理正则表达式的方法有regexp.exec、regexp.test、string.match、string.replace、string.search和string.split
 
 ## 关于__proto__和prototype
 **Function.prototype 等于 Object实例的__proto__(隐式原型链)等于其构造函数的prototype**
@@ -37,10 +38,10 @@ Math.ceil()方法用于四舍五入
 
 ## ques1  javascript全局执行上下文，为我们创建了两个东西：全局对象和this关键字
 ## __proto__和prototype
-  万物都有proto，只有function才有prototype
-  只有函数才有原型链,对象没有
-  对象要看到原型直接.__proto__，就可以看到
-  而函数要看到原型，需要.__proto__得到是用方法包起来的，就像是女孩子化了妆，再.__proto__之后才能看到素颜，也就是原型。
+  - 万物都有proto，只有function才有prototype
+  - 只有函数才有原型链,对象没有
+  - 对象要看到原型直接.__proto__，就可以看到
+  - 而函数要看到原型，需要.__proto__得到是用方法包起来的，就像是女孩子化了妆，再.__proto__之后才能看到素颜，也就是原型。
 
 ## new方法的执行原理
   1. 创建一个空对象，构造函数的this指向这个空对象
@@ -113,12 +114,12 @@ for (var i = 0;i<10;i++){
 for (let index of myArray) {
   console.log(index);
 }
-```
-**for-in**
+
+// for-in
 // 1. index索引为字符串类型的数字，不能直接进行几何运算，
 // 2.遍历数组遍历顺序有可能不是按照实际数组的内部数据进行的
 // 3.使用for-in会**遍历数组所有可枚举属性**，包括原型链，所以for-in很适合遍历对象
-**for-of**
+// for-of
 //for-in 遍历的是数组的索引，for-of遍历的是数组的元素
 // for-of遍历的只是数组内的元素，而不包括数组原型属性和索引
 
@@ -126,7 +127,7 @@ for (let index of myArray) {
 console.log(a.__proto__ === b)//true
 console.log(Object.getPrototypeOf(a) === b)//true
 // 浏览器的__proto__属性就相当于getPrototypeOf这个正式的api,两次的操作时一样的
-
+```
 ## async
 - async 函数就是 Generator 函数的语法糖,
 如class 是 function.prototype的语法糖

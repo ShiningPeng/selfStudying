@@ -195,3 +195,6 @@ console.log(arr)
     **arr.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])**
 - 其作用有：数组求和，二维数组化为一维数组等
 - 详情可参考[reduce函数](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+******
+### foreach for-in for-of
+- [foreach for-in for-of详解](https://blog.csdn.net/crystal6918/article/details/75099816)
