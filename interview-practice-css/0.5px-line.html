@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.5">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>画一条0.5px的线</title>
+  <style>
+    .half-line1 {
+      height: 1px;
+      transform: scaleY(0.5);
+      transform-origin: 50% 100%;
+      background-color: black;
+    }
+
+    .half-line2 {
+      height: 1px;
+      background: none;
+      box-shadow: 0 0.5px 0 #000;
+    }
+
+    .line-1px {
+      height: 1px;
+      background-color: black;
+    }
+
+    .border-img-half {
+      /* 一个0.5像素的线条作为线条背景图片 */
+      border-width: 0 0 1px 0;
+      border-image: imageUrl 2 0 round;
+    }
+  </style>
+</head>
+
+<body>
+  <p>方法一：通过transform</p>
+  <div class="half-line1"></div>
+  <br>
+  <br>
+  <div class="line-1px"></div>
+  <br>
+  <br>
+  <p>方法一：通过box-shadow</p>
+  <div class="half-line2"></div>
+</body>
+
+</html>
