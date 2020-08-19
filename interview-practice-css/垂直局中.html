@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 400px;
+      height: 400px;
+      position: relative;
+      border: 1px solid #465468;
+    }
+
+    .content {
+      background-color: aqua;
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .con1 {
+      width: 500px;
+      height: 400px;
+      border: 2px solid #379;
+      position: relative;
+    }
+
+    .inner {
+      width: 300px;
+      height: 200px;
+      background-color: #746;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform:translate(-50%,-50%) 
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="content"></div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="con1">
+    <div class="inner"></div>
+  </div>
+</body>
+
+</html>
