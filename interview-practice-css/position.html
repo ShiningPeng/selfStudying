@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>positin详解</h1>
+  <h3>取值：</h3>
+  <br>
+  <br>
+  <h3>static</h3>
+  <h4>static是position属性的默认值。如果省略position属性，浏览器就认为该元素是static定位。
+    这时，浏览器会按照源码的顺序，决定每个元素的位置，这称为"正常的页面流"（normal flow）。
+    <em>每个块级元素占据自己的区块（block），元素与元素之间不产生重叠，这个位置就是元素的默认位置</em>
+    <em>top、bottom、left、right这四个属性无效。</em>
+  </h4>
+  <br>
+  <br>
+  <h3>absolute</h3>
+  <h4> 
+    absolute表示，相对于上级元素（一般是父元素）进行偏移，即定位基点是父元素
+    它有一个重要的限制条件：定位基点（一般是父元素）不能是static定位，
+    否则定位基点就会变成整个网页的根元素html。
+    另外，absolute定位也必须搭配top、bottom、left、right这四个属性一起使用。
+    absolute定位的元素会被"正常页面流"忽略，即在"正常页面流"中，该元素所占空间为零，周边元素不受影响
+    </h4>
+  <br>
+  <br>
+  <h3>relative</h3>
+  <h4>relative表示，相对于默认位置（即static时的位置）进行偏移，即定位基点是元素的
+    默认位置。<em>它必须搭配top、bottom、left、right这四个属性一起使用，用来指定
+      偏移的方向和距离</em>
+  </h4>
+  <br>
+  <br>
+  <h3>fixed</h3>
+  <h4>fixed表示，相对于视口（viewport，浏览器窗口）进行偏移，即定位基点是浏览器窗口。
+    这会导致元素的位置不随页面滚动而变化，好像固定在网页上一样。它如果搭配top、
+    bottom、left、right这四个属性一起使用，表示元素的初始位置是基于视口计算的，
+    否则初始位置就是元素的默认位置</h4>
+  <br>
+  <br>
+  <h3>sticky</h3>
+  <h4>sticky跟前面四个属性值都不一样，它会产生动态效果，很像relative和fixed的结合：
+    一些时候是relative定位（定位基点是自身默认位置），另一些时候自动变成fixed定位
+    （定位基点是视口）。因此，它能够形成 <em>"动态固定"</em>的效果。比如，网页的搜
+    索工具栏，初始加载时在自己的默认位置（relative定位）,页面向下滚动时，工具栏变成
+    固定位置，始终停留在页面头部（fixed定位）。sticky生效的前提是，必须搭配top、
+    bottom、left、right这四个属性一起使用，不能省略，否则等同于relative定位，
+    不产生"动态固定"的效果。原因是这四个属性用来定义"偏移距离"，
+    浏览器把它当作sticky的生效门槛。</h4>
+</body>
+</html>
