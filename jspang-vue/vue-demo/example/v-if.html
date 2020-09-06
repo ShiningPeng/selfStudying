@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../assets/js/vue.js"></script>
+</head>
+<body>
+  <h1>v-if v-else</h1>
+  <div id="app">
+    <div v-if="isLogin">你好精神的理解附件是</div>
+    <div v-else="isLogin">buhaojdof</div>
+
+    <br>
+    <br>
+    <br>
+    <h2>v-show</h2>
+    <div v-show="isShow">fjlsjfsjd的垃圾分类数据分类</div>
+  </div>
+
+  <script>
+
+    var app = new Vue({
+      el:'#app',
+      data() {
+        return {
+          isLogin:true
+          ,
+          isShow:true
+        }
+      }
+    })
+  </script>
+</body>
+</html>

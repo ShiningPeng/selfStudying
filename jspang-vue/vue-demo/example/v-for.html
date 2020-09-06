@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v-for实例</title>
+  <script src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+  <h1>v-for</h1>
+  <hr>
+  <div id="app">
+    <ul>
+      <li v-for="item in arr">
+        {{item}}
+      </li>
+    </ul>
+  </div>
+  
+  <script>
+
+    var app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          is: 1,
+          items: [1, 4, 85, 2, 7, 9, 45]
+        }
+      },
+      computed: {
+        arr(){
+          return this.items.sort((a,b) => a-b)
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>
