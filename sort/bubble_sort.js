@@ -10,4 +10,4 @@ function bubble_sort(arr) {
   }
   return arr;
 }
-console.log(bubble_sort([1,5,3,8,4,6,2,9,7]));
+console.log(bubble_sort([1, 5, 3, 8, 4, 6, 2, 9, 7]));
