@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        width: 100vw;
+        height: 100vh;
+        background: #34495e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      main {
+        width: 400px;
+        height: 400px;
+        /* background: #fff; */
+        border: 1px solid #fff;
+        /* animation-name: hd;
+        animation-duration: 2s;
+        animation-iteration-count: infinite; */
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        background: green;
+        animation-name: hd;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+      }
+      @keyframes hd {
+        /* from {
+          background: white;
+        }
+        25% {
+          transform: scale(2);
+        }
+        65% {
+          transform: scale(1);
+          background: aqua;
+        }
+        to {
+          background: red;
+        } */
+        25% {
+          transform: translateX(300px);
+        }
+        50% {
+          transform: translate(300px, 300px);
+        }
+        75% {
+          transform: translateY(300px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div></div>
+    </main>
+  </body>
+</html>
