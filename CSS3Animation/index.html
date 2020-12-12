@@ -11,29 +11,50 @@
       }
 
       body {
-        width: 100vw;
+        /* width: 100vw;
         height: 100vh;
         background: #34495e;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: center; */
       }
       main {
-        width: 400px;
-        height: 400px;
+        width: 100vw;
+        height: 100vh;
+        background: #34495e;
+        transform: scale(0);
+        animation-name: scale;
+        animation-duration: 2s;
+        animation-fill-mode: forward;
+        /* width: 400px;
+        height: 400px; */
         /* background: #fff; */
-        border: 1px solid #fff;
+        /* border: 1px solid #fff; */
         /* animation-name: hd;
         animation-duration: 2s;
         animation-iteration-count: infinite; */
       }
-      div {
+      /* div {
         width: 100px;
         height: 100px;
         background: green;
-        animation-name: hd;
+        animation-name: hd, bd, radius;
         animation-duration: 5s;
         animation-iteration-count: infinite;
+      } */
+      @keyframes scale {
+        25% {
+          transform: scale(0.5);
+        }
+        50% {
+          transform: scale(1);
+        }
+        75% {
+          transform: scale(0.5);
+        }
+        to {
+          transform: scale(1);
+        }
       }
       @keyframes hd {
         /* from {
@@ -49,14 +70,44 @@
         to {
           background: red;
         } */
-        25% {
-          transform: translateX(300px);
-        }
+        /* 25%,
+        75% {
+          background: orange;
+          border-radius: 50%;
+        } */
         50% {
           transform: translate(300px, 300px);
+          /* background: yellow;
+          border-radius: 0; */
         }
         75% {
           transform: translateY(300px);
+          /* background: orange; */
+        }
+        25% {
+          transform: translateX(300px);
+        }
+      }
+      @keyframes bd {
+        25% {
+          background: orange;
+        }
+        50% {
+          background: yellow;
+        }
+        75% {
+          background: orange;
+        }
+      }
+      @keyframes radius {
+        25% {
+          border-radius: 50%;
+        }
+        50% {
+          border-radius: 0%;
+        }
+        75% {
+          border-radius: 50%;
         }
       }
     </style>
