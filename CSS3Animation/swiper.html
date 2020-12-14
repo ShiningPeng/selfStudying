@@ -1,0 +1,102 @@
+<head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      width: 100vw;
+      height: 100vh;
+      background: #dfe6e9;
+      display: grid;
+    }
+    main {
+      width: 400px;
+      height: 200px;
+      align-self: center;
+      justify-self: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    section {
+      width: 1600px;
+      height: 200px;
+      display: grid;
+      grid-template: 1fr / repeat(4, 400px);
+      animation-name: slide;
+      animation-duration: 4s;
+      animation-timing-function: steps(4, end);
+      animation-iteration-count: infinite;
+    }
+    section:hover,
+    section:hover + ul::after {
+      animation-play-state: paused;
+    }
+    div {
+      overflow: hidden;
+    }
+    img {
+      width: 100%;
+    }
+    ul {
+      position: absolute;
+      left: 50%;
+      width: 200px;
+      bottom: 20px;
+      transform: translateX(-50%);
+      display: grid;
+      grid-template: 1fr / repeat(4, 1fr);
+      list-style: none;
+      justify-items: center;
+    }
+    ul::after {
+      content: "";
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #d63031;
+      position: absolute;
+      left: 10px;
+      top: 0;
+      z-index: -1;
+      animation: num 4s steps(4, end) infinite;
+    }
+    @keyframes num {
+      to {
+        transform: translateX(200px);
+      }
+    }
+    li {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.3);
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      color: white;
+    }
+    @keyframes slide {
+      to {
+        transform: translateX(-1600px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section>
+      <div><img src="./img/avatarr.jpg" alt="" /></div>
+      <div><img src="./img/snow.jpg" alt="" /></div>
+      <div><img src="./img/mo.jpg" alt="" /></div>
+      <div><img src="./img/hot-ballone.jpg" alt="" /></div>
+    </section>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+  </main>
+</body>

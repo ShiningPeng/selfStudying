@@ -1,0 +1,78 @@
+<style lang="css">
+  body {
+    width: 100vw;
+    height: 100vh;
+    background: #00cec9;
+    display: grid;
+  }
+  main {
+    width: 400px;
+    height: 200px;
+    /* background: red; */
+    align-self: center;
+    justify-self: center;
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+  }
+  div {
+    text-align: center;
+    background: #ffeaa7;
+    border: solid 1px#0984e3;
+    box-sizing: border-box;
+    position: relative;
+  }
+  div:nth-child(1)::before,
+  div:nth-child(5)::before {
+    animation: move 2s infinite;
+    z-index: 2;
+    animation-play-state: paused;
+  }
+  div:nth-child(1)::before {
+    content: "start";
+    width: 100px;
+    height: 100px;
+    background: #d63031;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* animation-timing-function: steps(4, start);
+    animation-timing-function: steps(1, start); */
+    animation-timing-function: step-start;
+  }
+  div:nth-child(5)::before {
+    content: "end";
+    width: 100px;
+    height: 100px;
+    background: #55efc4;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* animation-timing-function: steps(4, end); */
+    /* animation-timing-function: steps(1, end); */
+    animation-timing-function: step-end;
+  }
+  main:hover div::before {
+    animation-play-state: running;
+  }
+  @keyframes move {
+    50% {
+      transform: translateX(100px);
+    }
+    to {
+      transform: translateX(0px);
+    }
+  }
+</style>
+
+<body>
+  <main>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+  </main>
+</body>
