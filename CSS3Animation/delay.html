@@ -1,0 +1,31 @@
+<style>
+  body {
+    width: 100vw;
+    height: 100vh;
+    background-color: slategray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  div {
+    width: 100px;
+    height: 100px;
+    background: aqua;
+    animation-name: scale;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+  }
+  @keyframes scale {
+    /* 50%{
+      transform: scale(1);
+    } */
+    to {
+      transform: scale(2);
+    }
+  }
+</style>
+
+<body>
+  <div></div>
+</body>

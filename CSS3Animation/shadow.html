@@ -1,0 +1,63 @@
+<style lang="css">
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    /* background: #636e72; */
+    grid-template: 1fr/1fr;
+  }
+  /* div {
+    width: 200px;
+    height: 200px;
+    background: #d63031;
+    align-self: center;
+    justify-self: center;
+    color: #d63031;
+    box-shadow: 220px 50px currentColor; */
+  /* currentColor:获取当前文本颜色 */
+  /* } */
+  button {
+    width: 500px;
+    height: 200px;
+    background: #b2bec3;
+    color: #e17055;
+    justify-self: center;
+    align-self: center;
+    font-size: 5em;
+    text-align: center;
+  }
+  button::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    /* box-shadow: 30px 0 0 currentColor, 90px 0 0 currentColor,
+      150px 0 0 currentColor; */
+    animation: loading 2s infinite;
+  }
+
+  @keyframes loading {
+    from {
+      box-shadow: none;
+    }
+    30% {
+      box-shadow: 30px 0 0 currentColor;
+    }
+    60% {
+      box-shadow: 30px 0 0 currentColor, 90px 0 0 currentColor;
+    }
+    90% {
+      box-shadow: 30px 0 0 currentColor, 90px 0 0 currentColor,
+        150px 0 0 currentColor;
+    }
+  }
+</style>
+
+<body>
+  <!-- <div></div> -->
+  <button>提交</button>
+</body>
