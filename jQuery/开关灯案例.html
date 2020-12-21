@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      img {
+        width: 300px;
+        margin: 10px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <button>开灯</button>
+    <button>关灯</button>
+    <img src="../CSS3Animation/img/avatarr.jpg" alt="" />
+
+    <script>
+      //jQuery和原生js交叉使用十分方便
+
+      $(function () {
+        var $btns = $("button");
+        $($btns.get(0)).click(function () {
+          $("body").css("backgroundColor", "rgba(255,255,255,1)");
+        });
+        $($btns.get(1)).click(function () {
+          $("body").css("backgroundColor", "rgba(0,0,0,1)");
+        });
+      });
+    </script>
+  </body>
+</html>

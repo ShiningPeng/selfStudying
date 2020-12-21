@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <input type="button" id="getBtn" value="获取" />
+    <input type="button" id="setBtn" value="设置" />
+
+    <div id="div1">
+      这是一个div标签
+      <p>这是一个p标签</p>
+      <span>span标签</span>
+    </div>
+
+    <div id="div2">
+      这是第二个div标签
+      <p>这是第二个p标签</p>
+      <span>span标签2</span>
+    </div>
+
+    <script>
+      $("#getBtn").click(function () {
+        console.log($("#div1").text());
+      });
+
+      //  1.获取元素的文本,text()不传参数，会获取到本身文本和他所有的后代元素的文本。
+      // 2.设置元素文本，text() 传递参数，参数就是设置的文本
+      $("#setBtn").click(function () {
+        // 2.1会覆盖原来的内容，甚至修改dom结构，即使设置的文本中含有标签，也不会去解析出来,所以使用时需要注意
+        // $("#div1").text("这是新设置的文本");
+        // 2.2如果选择器选中了多个元素，那么所有的dom元素都会设置上
+        $("div").text("这是给所有div设置的文本");
+      });
+    </script>
+  </body>
+</html>

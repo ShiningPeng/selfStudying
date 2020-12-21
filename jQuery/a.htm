@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+      }
+      .box {
+        width: 278px;
+        height: 32px;
+        background: #331158;
+        opacity: 0.36;
+        border-radius: 32px;
+        font-size: 15px;
+        color: #d63031;
+        text-align: center;
+        display: grid;
+        align-content: center;
+        /* justify-content: center; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">活动时间：2020.12.22~2021.01.03</div>
+
+    <audio autoplay="autopaly" loop="loop" controls="controls" id="audios">
+      <source src="./song.mp3" type="audio/mp3" />
+    </audio>
+
+    <script>
+      $(document).ready(function () {
+        document.addEventListener("touchstart", function () {
+          document.getElementById("audios").play();
+        });
+      });
+
+      // $("body").one("touchstart", function (e) {
+      //   e.preventDefault();
+      //   audio.play();
+      // });
+    </script>
+  </body>
+</html>

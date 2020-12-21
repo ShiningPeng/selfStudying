@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>用户无操作自动跳转</title>
+  </head>
+  <body style="height: 10000px"></body>
+  <script>
+    window.onload = function () {
+      (function ($) {
+        funObj = {
+          timeUserFun: "timeUserFun",
+        };
+        $[funObj.timeUserFun] = function (time) {
+          var time = time || 2;
+          var userTime = time * 60; //设置时间  现在是6s
+          var objTime = {
+            init: 0,
+            time: function () {
+              objTime.init += 1;
+              if (objTime.init == userTime) {
+                window.location.href = "http://www.baidu.com"; //把你跳转的页面。扔到这里就行了。
+              }
+            },
+            eventFun: function () {
+              clearInterval(testUser);
+              objTime.init = 0;
+              testUser = setInterval(objTime.time, 1000);
+            },
+          };
+
+          var testUser = setInterval(objTime.time, 1000);
+
+          var body = document.querySelector("html");
+          // 监听事件
+          body.addEventListener("click", objTime.eventFun);
+          body.addEventListener("keydown", objTime.eventFun);
+          body.addEventListener("mousemove", objTime.eventFun);
+          body.addEventListener("mousewheel", objTime.eventFun);
+          body.addEventListener("touchstart", objTime.eventFun);
+        };
+      })(window);
+      timeUserFun(0.1);
+    };
+  </script>
+</html>
