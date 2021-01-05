@@ -1,0 +1,45 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-01-05 10:50:54
+ * @LastEditTime: 2021-01-05 13:59:44
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \self_study\react16-hooks\day1\1.rAF.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>requestAnimationFrame</title>
+  </head>
+  <body>
+    <div
+      id="progress-bar"
+      style="background: lightblue; width: 0px; height: 20"
+    ></div>
+    <button id="btn">开始</button>
+    <script>
+      // 演示一下raf的用法,页面上绘制一个进度条，从0到100
+      let btn = document.getElementById("btn");
+      let progressBar = document.getElementById("progress-bar");
+      let start;
+      function progress() {
+        progressBar.style.width = progressBar.offsetWidth + 1 + "px";
+        progressBar.innerHTML = progressBar.offsetWidth + "%";
+        if (progressBar.offsetWidth < 100) {
+          let cur = Date.now();
+          console.log(cur - start);
+          start = cur;
+          requestAnimationFrame(progress);
+        }
+      }
+      btn.addEventListener("click", () => {
+        progressBar.style.width = 0; //先把宽度清楚，rAF后面会用到
+        let currentTime = Date.now();
+        start = currentTime;
+        requestAnimationFrame(progress);
+      });
+    </script>
+  </body>
+</html>
