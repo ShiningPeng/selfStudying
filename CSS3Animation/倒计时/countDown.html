@@ -1,0 +1,79 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-01-15 11:45:19
+ * @LastEditTime: 2021-01-15 15:52:20
+ * @LastEditors: Please set LastEditors
+ * @Description: 倒计时动画.
+ * @FilePath: \self_study\testColor\countDown.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .num {
+        width: 80px;
+        height: 120px;
+        animation: countDown 3s linear infinite;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      @keyframes countDown {
+        0% {
+          background-image: url(./3.png);
+          opacity: 1;
+        }
+        33% {
+          background-image: url(./3.png);
+          transform: scale(1.2);
+          opacity: 0;
+        }
+        34% {
+          background-image: url(./2.png);
+          transform: scale(1);
+          opacity: 1;
+        }
+        66% {
+          background-image: url(./2.png);
+          transform: scale(1.2);
+          opacity: 0;
+        }
+        67% {
+          background-image: url(./1.png);
+          transform: scale(1);
+          opacity: 1;
+        }
+        100% {
+          background-image: url(./1.png);
+          transform: scale(1.2);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class='container'>
+      <div class="num"></div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+
