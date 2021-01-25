@@ -1,0 +1,39 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-01-24 15:49:34
+ * @LastEditTime: 2021-01-24 16:05:44
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \self_study\animate.css\demo\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>animate.css</title>
+  <style>
+    .container{
+      width: 100px;
+      height: 100px;
+      background-color: aqua;
+      animation: fade-in-up 1s; /* referring directly to the animation's @keyframe declaration */
+    }
+    @keyframes move {
+
+
+}
+@keyframes fade-in-up {  
+    0% {opacity: 0; transform: translateY(100%);}/*初始状态 透明度为0*/  
+    40% {opacity: 0.5;}/*过渡状态 透明度为0*/  
+    100% {opacity: 1;transform: translateY(0);}/*结束状态 透明度为1*/  
+}     
+  </style>
+</head>
+<body>
+  <div class="container animate__animated animate__bounce"></div>
+  <script>
+
+  </script>
+</body>
+</html>
