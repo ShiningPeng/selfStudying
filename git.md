@@ -87,3 +87,19 @@ Please make sure you have the correct access rights	and the repository exists.
 克隆时没有权限，这时只需要fork一下，拉到自己的仓库，再克隆自己的仓库到本地就可以了
 
 
+
+## git工作流
+**仅个人工作经验**
+- 接到一个新的需求，确认好自己的工作内容后新建一个分支
+- git cheakout -b 新分支名（比如20210907/pcr/zhiZhuZhiPai）
+- 在自己新建的分支上完成自己的任务
+- 通常是在联调测试过后，自己的代码没有问题了，这个时候就可以合并到master分支了
+	- 但如果没有通过测试就把代码合并到了master上，需要有权限的人比如组长才能进行修改，在master上直接操作；
+	- 不过一般在自己合并代码的时候需要组长同意才能合并，口头上需要和组长讲
+	- 而且gitlab上也会有限制，你合并代码时相当于提交了一个合并代码的请求，需要组长通过之后你的代码才会真正合并
+	- 合并之前需要注意的是，需要先拉取主分支上其他同事的代码，不然会产生冲突
+	- git checkout master; git pull;(使本地master分支有其他同事的代码) git merge 20210907/pcr/zhiZhuZhiPai;
+	- 等组长通过了请求，你的代码就合并到了主分支上了
+- 可以使用命令行来操作，或者vscode自带的git操作（界面左侧从上往下第三个tab），当然也可以使用图形化的工具，比如sourceTree
+
+
