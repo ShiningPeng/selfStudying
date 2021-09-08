@@ -434,3 +434,6 @@ dev:{
     }
   }
 }
+```
+## router/index.js中设置激活tab类名
+- routes同级属性---linkActiveClass
